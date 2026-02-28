@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        /* Blue-Green Hue Gradient Palette */
+        --background: 0.98 0.008 200;
+        --foreground: 0.18 0.04 220;
+        --card: 1 0 0;
+        --card-foreground: 0.18 0.04 220;
+        --popover: 1 0 0;
+        --popover-foreground: 0.18 0.04 220;
+        /* Primary: Vibrant Ocean Blue */
+        --primary: 0.52 0.18 240;
+        --primary-foreground: 0.98 0.005 200;
+        /* Secondary: Vibrant Teal-Green */
+        --secondary: 0.58 0.16 175;
+        --secondary-foreground: 0.98 0.005 175;
+        /* Muted: Light blue-gray */
+        --muted: 0.94 0.02 210;
+        --muted-foreground: 0.50 0.04 220;
+        /* Accent: Bright Cyan-Green */
+        --accent: 0.72 0.14 185;
+        --accent-foreground: 0.15 0.04 200;
+        /* Success: Emerald Green */
+        --success: 0.60 0.18 155;
+        --success-foreground: 0.98 0.005 155;
+        /* Destructive: Warm Red */
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.98 0.005 25;
+        --border: 0.88 0.04 210;
+        --input: 0.88 0.04 210;
+        --ring: 0.52 0.18 240;
+        --chart-1: 0.52 0.18 240;
+        --chart-2: 0.58 0.16 175;
+        --chart-3: 0.72 0.14 185;
+        --chart-4: 0.60 0.18 155;
+        --chart-5: 0.65 0.15 210;
+    }
+
+    .dark {
+        --background: 0.14 0.03 225;
+        --foreground: 0.95 0.01 200;
+        --card: 0.18 0.03 225;
+        --card-foreground: 0.95 0.01 200;
+        --popover: 0.16 0.03 225;
+        --popover-foreground: 0.95 0.01 200;
+        --primary: 0.62 0.18 240;
+        --primary-foreground: 0.12 0.03 225;
+        --secondary: 0.55 0.16 175;
+        --secondary-foreground: 0.95 0.01 175;
+        --muted: 0.22 0.03 225;
+        --muted-foreground: 0.65 0.03 210;
+        --accent: 0.65 0.14 185;
+        --accent-foreground: 0.12 0.03 200;
+        --success: 0.58 0.18 155;
+        --success-foreground: 0.95 0.01 155;
+        --destructive: 0.58 0.20 25;
+        --destructive-foreground: 0.95 0.01 25;
+        --border: 0.26 0.04 225;
+        --input: 0.26 0.04 225;
+        --ring: 0.62 0.18 240;
+        --chart-1: 0.62 0.18 240;
+        --chart-2: 0.55 0.16 175;
+        --chart-3: 0.65 0.14 185;
+        --chart-4: 0.58 0.18 155;
+        --chart-5: 0.60 0.15 210;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+        scroll-behavior: smooth;
+    }
+}
+
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+@layer utilities {
+    .success {
+        background-color: oklch(var(--success));
+        color: oklch(var(--success-foreground));
+    }
+
+    .gradient-blue-green {
+        background: linear-gradient(135deg, oklch(0.52 0.18 240), oklch(0.58 0.16 175));
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, oklch(0.52 0.18 240), oklch(0.58 0.16 175));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.6s ease-out forwards;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}

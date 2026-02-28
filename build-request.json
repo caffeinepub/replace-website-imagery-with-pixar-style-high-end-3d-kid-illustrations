@@ -1,0 +1,226 @@
+{
+  "kind": "build_request",
+  "title": "Build Akshar Learning Hub Full Website",
+  "projectName": "Akshar Learning Hub",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Redesign the overall app theme to use a blue-green hue gradient color scheme throughout the entire website. Replace the current pastel palette with rich blue-to-green gradients. Update Tailwind config and global CSS variables accordingly. Apply a Pixar HD-style visual aesthetic with vibrant, illustrated, animated elements that appeal to both kids and parents.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "The color theme must be focused on blue and green which must be in hue effect",
+          "Interactive elements must focus on informational animations in Pixar HD style"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Blue-to-green gradient palette is applied consistently across all sections",
+        "Tailwind config and CSS variables reflect the new blue-green hue theme",
+        "Visual style is vibrant and Pixar-inspired throughout"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Rebuild the Hero/Landing section with a full-width animated welcome area featuring the Akshar Learning Hub branding, a bold headline about phonics-based reading and writing, a short value proposition, a prominent call-to-action button (e.g., 'Start Learning'), and a Pixar-style illustrated hero image of kids learning. Include scroll-triggered entrance animations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Hero/Landing with animated welcome"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section displays Akshar Learning Hub name and tagline prominently",
+        "Call-to-action button is visible and styled in brand colors",
+        "Hero image uses the Pixar-style generated asset",
+        "Entrance animations trigger on page load"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create an 'About Akshar Learning Hub' section that describes the organization's mission, vision, and approach to phonics-based education. Include animated infographic-style elements, Pixar-style illustrations, and engaging copy aimed at both parents and kids. Highlight the unique teaching methodology and the importance of phonics.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "About Akshar Learning Hub"
+        ]
+      },
+      "acceptanceCriteria": [
+        "About section is present with mission and vision content",
+        "Section includes at least one illustrated/animated element",
+        "Content addresses both parent and child audiences"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create an 8-Month Phonics Program section that details the full curriculum from Beginner to Advanced. Structure it as three phases: Beginner (Months 1–3), Intermediate (Months 4–6), and Advanced (Months 7–8). Each phase should list learning objectives, skills covered, and materials provided. Use animated progress-style cards or timeline layout. All materials are provided by Akshar Learning Hub.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "8-Month Phonics Program (Beginner → Intermediate → Advanced) with full curriculum details",
+          "all material provided by us"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three program phases (Beginner, Intermediate, Advanced) are displayed",
+        "Each phase lists learning goals and included materials",
+        "Timeline or card layout is animated and visually appealing",
+        "Mention that all materials are provided by Akshar Learning Hub"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Rebuild the interactive phonics activities section to include: (1) an alphabet pronunciation demo where every letter's phonetic sound follows strict phonics/phonetics rules (not letter names), (2) a letter-sound matching quiz, and (3) a word pronunciation exercise where kids can hear words spoken. All activities must be embedded in the main website page as a 'Try It' demo section. Use kid-friendly UI with Pixar-style character illustrations as decorative elements.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Interactive Phonics Activity — alphabet pronunciation demo (phonetics-based), letter-sound quiz, and word pronunciation demos",
+          "All alphabet sounds strictly per phonics/phonetics rules",
+          "Kid-friendly UI alongside parent-focused informational content"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 26 letter sounds use phonics pronunciation (e.g., 'a' as in 'apple', not 'ay')",
+        "Letter-sound matching quiz is functional with score tracking",
+        "Word pronunciation cards allow kids to hear words spoken",
+        "Activities section is clearly labeled as a demo/try-it area"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a 'Learning Strategies & Modern Teaching Methods' section featuring animated infographics. Include strategies such as multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Present modern teaching methods like gamification, spaced repetition, and interactive storytelling. Use scroll-triggered animations and icon-based visual cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Learning Strategies & Modern Teaching Methods (with animated infographics)",
+          "modern learning methods"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 5 learning strategies are presented with icons or illustrations",
+        "At least 3 modern teaching methods are highlighted",
+        "Section uses scroll-triggered animations",
+        "Content is informative and accessible to parents"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a parent testimonials section with at least 4–6 testimonials written in natural, conversational language as if real parents are speaking. Each testimonial should include a parent name, child's approximate age/grade, a short story or experience, and a star rating. Display them in an animated carousel or card layout. Avoid formal or corporate language.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Testimonials in natural, conversational language from parents",
+          "genuine way and natural language in conversational way"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 4 testimonials are present",
+        "Language is conversational and natural, not corporate",
+        "Each testimonial includes parent name, child info, and star rating",
+        "Displayed in an animated carousel or scrollable card layout"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a Contact Information section at the bottom of the website. Include a contact form with fields for Name, Email, Phone Number, Child's Age, and Message. Also display address, phone number, email address, and social media links as static info. Style with the blue-green theme and include a friendly Pixar-style illustration nearby.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Contact Information section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form includes Name, Email, Phone, Child's Age, and Message fields",
+        "Static contact details (address, phone, email) are displayed",
+        "Form has basic client-side validation",
+        "Section is styled consistently with the blue-green brand theme"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Rebuild the site navigation header to reflect all new sections of the Akshar Learning Hub website: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Make it sticky with a smooth scroll behavior to each section. Use the Akshar Learning Hub logo/name in the header. Include a mobile-responsive hamburger menu.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Must include all like Hero landing section, about Akshar learning hub, phonics program"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation includes links to all major sections",
+        "Smooth scroll behavior works for all navigation links",
+        "Header is sticky and collapses to hamburger on mobile",
+        "Akshar Learning Hub branding is displayed in the header"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Rebuild the Footer to reflect Akshar Learning Hub branding, with quick navigation links, contact details, a brief tagline about phonics education, and copyright information for Akshar Learning Hub.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-18"
+        ],
+        "quotes": [
+          "Akshar Learning Hub"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays Akshar Learning Hub name and tagline",
+        "Quick links to all major sections are included",
+        "Contact info is shown in the footer",
+        "Copyright text references Akshar Learning Hub"
+      ]
+    }
+  ],
+  "constraints": [
+    "All alphabet pronunciation audio must strictly follow phonics/phonetic rules — use phonetic sounds (e.g., /æ/ for 'a'), not letter names",
+    "Do not change immutable frontend paths: useInternetIdentity, useActor, main.tsx, or UI components",
+    "Color theme must use blue and green hue gradients — do not revert to pastel palette",
+    "All interactive activities must work without any backend — use frontend-only state"
+  ],
+  "nonGoals": [
+    "User authentication or login functionality",
+    "Backend data persistence for contact form submissions",
+    "Real-time features or chat",
+    "External API integrations",
+    "A separate dedicated children's app or gamified platform beyond the demo activities"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Pixar HD-style illustration of diverse happy children sitting together reading colorful books in a bright classroom (hero-kids-reading.dim_1400x700.png)",
+      "Pixar HD-style illustration of a friendly smiling teacher with children around a whiteboard showing letters and phonics symbols (about-teacher-kids.dim_900x600.png)",
+      "Pixar HD-style illustration of a child progressing through levels with stars and a trophy, showing learning journey (program-journey.dim_900x500.png)",
+      "Pixar HD-style illustration of a cute animated owl or animal mascot holding a letter card, representing phonics learning (mascot-phonics.dim_400x400.png)",
+      "Pixar HD-style illustration of parents smiling and watching their child read confidently (testimonials-parents.dim_800x500.png)",
+      "Pixar HD-style bright colorful illustration of the alphabet with associated animals or objects in phonics style (alphabet-banner.dim_1200x400.png)"
+    ],
+    "edits": []
+  }
+}

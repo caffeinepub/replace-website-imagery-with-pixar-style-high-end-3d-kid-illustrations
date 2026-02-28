@@ -1,0 +1,230 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Akshar Learning Hub Full Website Redesign - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Redesign app theme to blue-green hue gradient with Pixar HD-style aesthetic",
+      "acceptanceCriteria": [
+        "Blue-to-green gradient palette is applied consistently across all sections",
+        "Tailwind config and CSS variables reflect the new blue-green hue theme",
+        "Visual style is vibrant and Pixar-inspired throughout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Replace the current OKLCH color system with a vibrant blue-to-green gradient palette. Define primary colors using blue hues (e.g., cyan, sky, blue) and secondary colors using green hues (e.g., teal, emerald, green). Add gradient variants for backgrounds and accent colors. Maintain the existing border radius and animation configurations."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update CSS custom properties to use the new blue-green gradient color scheme. Replace the pastel OKLCH color variables with vibrant blue-to-green gradient values for both light and dark modes. Add gradient utility classes for backgrounds and borders. Include Pixar-style visual effects like subtle shadows, smooth transitions, and vibrant color overlays."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Rebuild Hero/Landing section with animated welcome, branding, CTA, and Pixar-style illustration",
+      "acceptanceCriteria": [
+        "Hero section displays Akshar Learning Hub name and tagline prominently",
+        "Call-to-action button is visible and styled in brand colors",
+        "Hero image uses the Pixar-style generated asset",
+        "Entrance animations trigger on page load"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Rebuild the Hero component to feature Akshar Learning Hub branding with a bold headline about phonics-based reading and writing. Replace existing content with a value proposition emphasizing the 8-month phonics program. Update the CTA button to say 'Start Learning' styled with the blue-green gradient theme. Replace the hero image reference to use the generated asset frontend/public/assets/generated/hero-kids-reading.dim_1400x700.png. Add scroll-triggered entrance animations using CSS transitions or a lightweight animation library for fade-in and slide-up effects on mount."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create About Akshar Learning Hub section with mission, vision, and animated infographics",
+      "acceptanceCriteria": [
+        "About section is present with mission and vision content",
+        "Section includes at least one illustrated/animated element",
+        "Content addresses both parent and child audiences"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "create",
+          "description": "Create a new About component describing Akshar Learning Hub's mission (teaching phonics-based literacy), vision (empowering children to read and write confidently), and unique approach. Include 2-3 animated infographic-style cards highlighting key differentiators such as structured curriculum, multi-sensory learning, and parent involvement. Use the generated asset frontend/public/assets/generated/about-teacher-kids.dim_900x600.png as a supporting illustration. Apply scroll-triggered animations for cards and copy that engages both parents (outcome-focused) and kids (fun and colorful language). Style with the blue-green gradient theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the new About component below the Hero section. Ensure it is part of the main page layout and scrollable from the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create 8-Month Phonics Program section detailing Beginner, Intermediate, and Advanced phases",
+      "acceptanceCriteria": [
+        "Three program phases (Beginner, Intermediate, Advanced) are displayed",
+        "Each phase lists learning goals and included materials",
+        "Timeline or card layout is animated and visually appealing",
+        "Mention that all materials are provided by Akshar Learning Hub"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProgramOverview.tsx",
+          "operation": "create",
+          "description": "Create a ProgramOverview component structured as a timeline or three-phase card layout. Phase 1 (Beginner, Months 1-3): learning letter sounds, simple CVC words, and basic blending. Phase 2 (Intermediate, Months 4-6): digraphs, blends, sight words, and sentence reading. Phase 3 (Advanced, Months 7-8): complex words, fluency, comprehension strategies. Each card should list learning objectives, skills covered, and note that workbooks, flashcards, and materials are provided by Akshar Learning Hub. Use the generated asset frontend/public/assets/generated/program-journey.dim_900x500.png as a visual centerpiece. Add animated progress indicators or timeline connectors styled with the blue-green gradient. Include scroll-triggered animations for each phase card."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the ProgramOverview component below the About section. Ensure it is accessible via the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Rebuild interactive phonics activities with alphabet pronunciation demo, letter-sound quiz, and word pronunciation using strict phonics rules",
+      "acceptanceCriteria": [
+        "All 26 letter sounds use phonics pronunciation (e.g., 'a' as in 'apple', not 'ay')",
+        "Letter-sound matching quiz is functional with score tracking",
+        "Word pronunciation cards allow kids to hear words spoken",
+        "Activities section is clearly labeled as a demo/try-it area"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/audioHelper.ts",
+          "operation": "modify",
+          "description": "Update the playLetterSound function to ensure all 26 alphabet sounds strictly follow phonics/phonetics rules. Map each letter to its phonetic sound (e.g., 'a' -> /æ/ as in 'apple', 'b' -> /b/, 'c' -> /k/). Use the Web Speech API with carefully tuned parameters (rate, pitch) to produce accurate phonetic pronunciations, not letter names. Verify that vowels use short vowel sounds by default. Add a comment documenting the phonics rules applied for each letter."
+        },
+        {
+          "path": "frontend/src/components/activities/LetterSoundMatching.tsx",
+          "operation": "modify",
+          "description": "Ensure the alphabet grid activity uses the updated audioHelper for phonics-based pronunciation. Add or enhance kid-friendly UI elements with Pixar-style character illustrations using the generated asset frontend/public/assets/generated/mascot-phonics.dim_400x400.png as a decorative element or guide character. Style the grid with the blue-green gradient theme and add playful animations for letter selection."
+        },
+        {
+          "path": "frontend/src/components/activities/PronunciationPractice.tsx",
+          "operation": "modify",
+          "description": "Update the PronunciationPractice component to feature word pronunciation cards that allow kids to hear words spoken using the audioHelper. Ensure all words follow phonics rules. Add the generated asset frontend/public/assets/generated/alphabet-banner.dim_1200x400.png as a decorative header image. Style cards with the blue-green gradient and add hover animations. Ensure this is clearly labeled as part of the 'Try It' demo section."
+        },
+        {
+          "path": "frontend/src/components/activities/SoundRecognition.tsx",
+          "operation": "modify",
+          "description": "Ensure the SoundRecognition quiz component uses phonics-based letter sounds from audioHelper and tracks scores correctly. Enhance the UI with Pixar-style illustrations and the blue-green gradient theme. Add celebratory animations for correct answers. Label this as part of the 'Try It' demo section."
+        },
+        {
+          "path": "frontend/src/components/PhonicsActivitiesDemo.tsx",
+          "operation": "create",
+          "description": "Create a wrapper component that organizes all phonics activities into a unified 'Try It' demo section. Include a header clearly labeled 'Try Our Phonics Activities' with a short description. Display tabs or cards linking to LetterSoundMatching, PronunciationPractice, and SoundRecognition. Style with the blue-green gradient and add the generated asset frontend/public/assets/generated/mascot-phonics.dim_400x400.png as a friendly mascot illustration. Apply consistent spacing and animations."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the PhonicsActivitiesDemo component below the ProgramOverview section. Ensure it is accessible via the navigation menu and clearly integrated into the single-page layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create Learning Strategies & Modern Teaching Methods section with animated infographics",
+      "acceptanceCriteria": [
+        "At least 5 learning strategies are presented with icons or illustrations",
+        "At least 3 modern teaching methods are highlighted",
+        "Section uses scroll-triggered animations",
+        "Content is informative and accessible to parents"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LearningStrategies.tsx",
+          "operation": "create",
+          "description": "Create a LearningStrategies component featuring icon-based visual cards for at least 5 strategies: multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Add 3 modern teaching method cards: gamification, spaced repetition, and interactive storytelling. Each card should include an icon or small illustration, a heading, and a brief parent-friendly description. Use scroll-triggered animations (fade-in, slide-up) for each card as the user scrolls. Style with the blue-green gradient theme and ensure the layout is responsive."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the LearningStrategies component below the PhonicsActivitiesDemo section. Ensure it is accessible via the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create parent testimonials section with natural conversational language and animated carousel",
+      "acceptanceCriteria": [
+        "At least 4 testimonials are present",
+        "Language is conversational and natural, not corporate",
+        "Each testimonial includes parent name, child info, and star rating",
+        "Displayed in an animated carousel or scrollable card layout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Testimonials.tsx",
+          "operation": "create",
+          "description": "Create a Testimonials component displaying 4-6 parent testimonials in a carousel or horizontally scrollable card layout. Each testimonial should include: parent name (e.g., 'Priya S.'), child's age/grade (e.g., 'My daughter, 5 years old'), a natural conversational story (e.g., 'She used to struggle with reading, but after joining Akshar, she's reading bedtime stories to us now!'), and a 5-star rating. Avoid formal or corporate language; write as if real parents are speaking. Use the generated asset frontend/public/assets/generated/testimonials-parents.dim_800x500.png as a supporting illustration. Add swipe or navigation controls for the carousel. Style with the blue-green gradient theme and smooth transitions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the Testimonials component below the LearningStrategies section. Ensure it is accessible via the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create Contact Information section with form and static contact details",
+      "acceptanceCriteria": [
+        "Contact form includes Name, Email, Phone, Child's Age, and Message fields",
+        "Static contact details (address, phone, email) are displayed",
+        "Form has basic client-side validation",
+        "Section is styled consistently with the blue-green brand theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "create",
+          "description": "Create a Contact component featuring a contact form with fields for Name (text), Email (email validation), Phone Number (tel), Child's Age (number or select), and Message (textarea). Add client-side validation for required fields and email format. Include static contact information: address, phone number, email, and social media links (placeholders or icons). Position a Pixar-style illustration nearby using a suitable generated asset (e.g., frontend/public/assets/generated/about-teacher-kids.dim_900x600.png or another friendly image). Style the form and section with the blue-green gradient theme. Note: Form submissions are frontend-only; no backend persistence is required."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the Contact component below the Testimonials section. Ensure it is accessible via the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Rebuild navigation header with all sections, sticky behavior, smooth scroll, and mobile hamburger",
+      "acceptanceCriteria": [
+        "Navigation includes links to all major sections",
+        "Smooth scroll behavior works for all navigation links",
+        "Header is sticky and collapses to hamburger on mobile",
+        "Akshar Learning Hub branding is displayed in the header"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Rebuild the Header component to display 'Akshar Learning Hub' branding (logo and name). Replace existing navigation links with: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Implement smooth scroll behavior for all links using anchor tags with scroll-behavior CSS or a scroll utility. Make the header sticky (position: sticky or fixed) with appropriate z-index. Add a mobile-responsive hamburger menu that collapses navigation links on smaller screens. Style with the blue-green gradient theme and ensure active section highlighting."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Rebuild Footer with Akshar Learning Hub branding, quick links, and contact details",
+      "acceptanceCriteria": [
+        "Footer displays Akshar Learning Hub name and tagline",
+        "Quick links to all major sections are included",
+        "Contact info is shown in the footer",
+        "Copyright text references Akshar Learning Hub"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Rebuild the Footer component to display 'Akshar Learning Hub' branding and a brief tagline about phonics education (e.g., 'Empowering young readers through phonics'). Add quick navigation links to all major sections: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Display contact details (address, phone, email). Update the copyright text to reference Akshar Learning Hub (e.g., '© 2025 Akshar Learning Hub. All rights reserved.'). Remove or replace caffeine.ai attribution. Style with the blue-green gradient theme."
+        }
+      ]
+    }
+  ]
+}

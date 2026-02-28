@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Building a full interactive website for Akshar Learning Hub, an education firm focused on teaching kids phonics/reading/writing. Blue-green hue gradient theme with Pixar HD-style animations. Serves both kids and parents/teachers.",
+  "architectural_notes": [
+    "Color theme: blue and green hue gradient throughout",
+    "Design style: Pixar HD-style animations and illustrations",
+    "Dual audience: kid-friendly UI alongside parent-focused informational content",
+    "All alphabet sounds/pronunciation strictly per phonics/phonetics rules"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Pixar HD-style illustration of diverse happy children sitting together reading colorful books in a bright classroom (hero-kids-reading.dim_1400x700.png)\n- Pixar HD-style illustration of a friendly smiling teacher with children around a whiteboard showing letters and phonics symbols (about-teacher-kids.dim_900x600.png)\n- Pixar HD-style illustration of a child progressing through levels with stars and a trophy, showing learning journey (program-journey.dim_900x500.png)\n- Pixar HD-style illustration of a cute animated owl or animal mascot holding a letter card, representing phonics learning (mascot-phonics.dim_400x400.png)\n- Pixar HD-style illustration of parents smiling and watching their child read confidently (testimonials-parents.dim_800x500.png)\n- Pixar HD-style bright colorful illustration of the alphabet with associated animals or objects in phonics style (alphabet-banner.dim_1200x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-redesign-the-overall-app-theme-to-use-a-blue-green-hue-gradient-color-scheme-throughout-the-entire-website-replace-the-current-pastel-palette-with-rich-blue-to-green-gradients-update-tailwind-config-and-global-css-variables-accordingly-apply-a-pixar-hd-style-visual-aesthetic-with-vibrant-illustrated-animated-elements-that-appeal-to-both-kids-and-parents",
+      "title": "Redesign the overall app theme to use a blue-green hue gradient color scheme throughout the entire website. Replace the current pastel palette with rich blue-to-green gradients. Update Tailwind config and global CSS variables accordingly. Apply a Pixar HD-style visual aesthetic with vibrant, illustrated, animated elements that appeal to both kids and parents.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-hero-landing-section-with-a-full-width-animated-welcome-area-featuring-the-akshar-learning-hub-branding-a-bold-headline-about-phonics-based-reading-and-writing-a-short-value-proposition-a-prominent-call-to-action-button-e-g-start-learning-and-a-pixar-style-illustrated-hero-image-of-kids-learning-include-scroll-triggered-entrance-animations",
+      "title": "Rebuild the Hero/Landing section with a full-width animated welcome area featuring the Akshar Learning Hub branding, a bold headline about phonics-based reading and writing, a short value proposition, a prominent call-to-action button (e.g., 'Start Learning'), and a Pixar-style illustrated hero image of kids learning. Include scroll-triggered entrance animations.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-akshar-learning-hub-section-that-describes-the-organization-s-mission-vision-and-approach-to-phonics-based-education-include-animated-infographic-style-elements-pixar-style-illustrations-and-engaging-copy-aimed-at-both-parents-and-kids-highlight-the-unique-teaching-methodology-and-the-importance-of-phonics",
+      "title": "Create an 'About Akshar Learning Hub' section that describes the organization's mission, vision, and approach to phonics-based education. Include animated infographic-style elements, Pixar-style illustrations, and engaging copy aimed at both parents and kids. Highlight the unique teaching methodology and the importance of phonics.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-8-month-phonics-program-section-that-details-the-full-curriculum-from-beginner-to-advanced-structure-it-as-three-phases-beginner-months-1-3-intermediate-months-4-6-and-advanced-months-7-8-each-phase-should-list-learning-objectives-skills-covered-and-materials-provided-use-animated-progress-style-cards-or-timeline-layout-all-materials-are-provided-by-akshar-learning-hub",
+      "title": "Create an 8-Month Phonics Program section that details the full curriculum from Beginner to Advanced. Structure it as three phases: Beginner (Months 1–3), Intermediate (Months 4–6), and Advanced (Months 7–8). Each phase should list learning objectives, skills covered, and materials provided. Use animated progress-style cards or timeline layout. All materials are provided by Akshar Learning Hub.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-interactive-phonics-activities-section-to-include-1-an-alphabet-pronunciation-demo-where-every-letter-s-phonetic-sound-follows-strict-phonics-phonetics-rules-not-letter-names-2-a-letter-sound-matching-quiz-and-3-a-word-pronunciation-exercise-where-kids-can-hear-words-spoken-all-activities-must-be-embedded-in-the-main-website-page-as-a-try-it-demo-section-use-kid-friendly-ui-with-pixar-style-character-illustrations-as-decorative-elements",
+      "title": "Rebuild the interactive phonics activities section to include: (1) an alphabet pronunciation demo where every letter's phonetic sound follows strict phonics/phonetics rules (not letter names), (2) a letter-sound matching quiz, and (3) a word pronunciation exercise where kids can hear words spoken. All activities must be embedded in the main website page as a 'Try It' demo section. Use kid-friendly UI with Pixar-style character illustrations as decorative elements.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-learning-strategies-modern-teaching-methods-section-featuring-animated-infographics-include-strategies-such-as-multi-sensory-learning-phonemic-awareness-blending-and-segmenting-sight-word-recognition-and-reading-aloud-present-modern-teaching-methods-like-gamification-spaced-repetition-and-interactive-storytelling-use-scroll-triggered-animations-and-icon-based-visual-cards",
+      "title": "Create a 'Learning Strategies & Modern Teaching Methods' section featuring animated infographics. Include strategies such as multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Present modern teaching methods like gamification, spaced repetition, and interactive storytelling. Use scroll-triggered animations and icon-based visual cards.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-parent-testimonials-section-with-at-least-4-6-testimonials-written-in-natural-conversational-language-as-if-real-parents-are-speaking-each-testimonial-should-include-a-parent-name-child-s-approximate-age-grade-a-short-story-or-experience-and-a-star-rating-display-them-in-an-animated-carousel-or-card-layout-avoid-formal-or-corporate-language",
+      "title": "Create a parent testimonials section with at least 4–6 testimonials written in natural, conversational language as if real parents are speaking. Each testimonial should include a parent name, child's approximate age/grade, a short story or experience, and a star rating. Display them in an animated carousel or card layout. Avoid formal or corporate language.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-information-section-at-the-bottom-of-the-website-include-a-contact-form-with-fields-for-name-email-phone-number-child-s-age-and-message-also-display-address-phone-number-email-address-and-social-media-links-as-static-info-style-with-the-blue-green-theme-and-include-a-friendly-pixar-style-illustration-nearby",
+      "title": "Create a Contact Information section at the bottom of the website. Include a contact form with fields for Name, Email, Phone Number, Child's Age, and Message. Also display address, phone number, email address, and social media links as static info. Style with the blue-green theme and include a friendly Pixar-style illustration nearby.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-site-navigation-header-to-reflect-all-new-sections-of-the-akshar-learning-hub-website-home-about-programs-activities-learning-strategies-testimonials-and-contact-make-it-sticky-with-a-smooth-scroll-behavior-to-each-section-use-the-akshar-learning-hub-logo-name-in-the-header-include-a-mobile-responsive-hamburger-menu",
+      "title": "Rebuild the site navigation header to reflect all new sections of the Akshar Learning Hub website: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Make it sticky with a smooth scroll behavior to each section. Use the Akshar Learning Hub logo/name in the header. Include a mobile-responsive hamburger menu.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-footer-to-reflect-akshar-learning-hub-branding-with-quick-navigation-links-contact-details-a-brief-tagline-about-phonics-education-and-copyright-information-for-akshar-learning-hub",
+      "title": "Rebuild the Footer to reflect Akshar Learning Hub branding, with quick navigation links, contact details, a brief tagline about phonics education, and copyright information for Akshar Learning Hub.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Hero/Landing section with animated welcome in blue-green gradient theme",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "About Akshar Learning Hub section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "8-Month Phonics Program section (Beginner to Advanced) with full curriculum details and all materials provided",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Interactive phonics activities: alphabet pronunciation demo (phonetics-based), letter-sound quiz, word-saying exercises",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Learning Strategies & Modern Teaching Methods section with animated infographics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Parent testimonials section in natural, conversational language",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Contact Information section",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Akshar Learning Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
