@@ -1,18 +1,21 @@
 # Specification
 
 ## Summary
-**Goal:** Build the full Akshar Learning Hub website with a blue-green gradient theme, Pixar HD-style visuals, and multiple informational and interactive sections for kids and parents.
+**Goal:** Build the Akshar Learning Hub tutoring website from scratch with a bright neon-accented design, all key sections, a gated download flow with simulated OTP, and a Motoko backend for user registration.
 
 **Planned changes:**
-- Apply a blue-to-green hue gradient color scheme throughout the entire site, replacing the current pastel palette; update Tailwind config and CSS variables accordingly
-- Rebuild the Hero/Landing section with animated welcome, Akshar Learning Hub branding, phonics-focused headline, value proposition, CTA button ("Start Learning"), and a Pixar-style hero illustration with entrance animations
-- Add an "About Akshar Learning Hub" section describing the mission, vision, and phonics-based teaching approach with animated infographic-style elements
-- Add an 8-Month Phonics Program section structured into three phases (Beginner: Months 1–3, Intermediate: Months 4–6, Advanced: Months 7–8), each listing learning objectives, skills, and materials provided by Akshar Learning Hub, using an animated timeline or card layout
-- Rebuild the Interactive Phonics Activities section ("Try It" demo) with: alphabet pronunciation demo using strict phonics sounds, a letter-sound matching quiz with score tracking, and word pronunciation cards — all frontend-only with kid-friendly Pixar-style UI
-- Add a "Learning Strategies & Modern Teaching Methods" section with animated infographic cards covering multi-sensory learning, phonemic awareness, blending/segmenting, sight words, reading aloud, gamification, spaced repetition, and interactive storytelling
-- Add a Parent Testimonials section with 4–6 conversational testimonials (parent name, child info, star rating) displayed in an animated carousel or card layout
-- Add a Contact section with a form (Name, Email, Phone, Child's Age, Message) plus static contact details (address, phone, email, social media links) styled in the blue-green theme
-- Rebuild the sticky navigation header with links to all sections (Home, About, Programs, Activities, Learning Strategies, Testimonials, Contact), smooth scroll, Akshar Learning Hub branding, and a mobile hamburger menu
-- Rebuild the footer with Akshar Learning Hub branding, quick links, contact details, phonics tagline, and copyright info
+- Apply a vibrant neon-accented color palette (electric cyan, neon yellow-green, hot pink, vivid orange) on a clean white background using Poppins/Nunito typography and Lucide icons throughout
+- Build a fixed responsive navigation header with logo/name, section nav links, "Enroll Now" CTA button, and mobile hamburger menu
+- Build a Hero section with the firm name "Akshar Learning Hub", tagline, brief intro, and "Book Free Demo" / "Explore Programs" CTA buttons with animated neon styling
+- Build an About section covering discipline, life skills, confidence, and social growth with highlight cards and placeholder student/parent testimonial quotes
+- Build five individual service sections/cards: After School Tuitions (Grade 1–8), Phonics, Maths Coaching, Special Subject Mentoring, and Scholarship & Exam Prep (Grade 5–10), each with title, description, grade range, and modern icon
+- Build a Testimonials section with 4–6 placeholder cards (name, role, grade, quote) in a carousel or grid layout
+- Build a Downloads section with three categories: Free (direct download), Sign-up Required (OTP-gated modal), and Paid (redirects to Payment page); placeholder cards with material labels
+- Implement a simulated OTP modal flow: collects name, email (validated), and phone (10-digit Indian), generates and displays a 6-digit OTP on-screen, requires correct OTP entry to unlock download
+- Build a Payment page with a placeholder UPI QR code image, placeholder UPI ID, payment instructions, and a WhatsApp link for post-payment confirmation
+- Build a Contact section with clickable phone number (7718823635), WhatsApp link (wa.me/917718823635 with pre-filled message), and address (Opposite Pratibha College, Chinchwad, Pune 411019) — no email
+- Add a fixed floating WhatsApp button visible on all sections
+- Build a site Footer with branding, quick nav links, services list, phone, address, and WhatsApp link — no email
+- Implement Motoko backend actor with `registerUser`, `verifyOTP`, and `getUsers` functions; store user data (name, email, phone) in stable storage; OTP is returned from the function for on-screen display
 
-**User-visible outcome:** Visitors see a complete, visually rich Akshar Learning Hub website with a blue-green Pixar-style theme, full curriculum details, interactive phonics demo activities, parent testimonials, and a contact form — all in a single-page layout with smooth navigation.
+**User-visible outcome:** Visitors can browse the full Akshar Learning Hub website, explore services, read about the program, download free materials directly, access gated materials after completing simulated OTP verification, and be directed to a UPI payment placeholder for paid materials. The site includes prominent WhatsApp and phone contact options throughout.

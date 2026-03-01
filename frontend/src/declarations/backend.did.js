@@ -8,10 +8,38 @@
 
 import { IDL } from '@icp-sdk/core/candid';
 
-export const idlService = IDL.Service({});
+export const User = IDL.Record({
+  'otp' : IDL.Text,
+  'otpVerified' : IDL.Bool,
+  'name' : IDL.Text,
+  'otpTimestamp' : IDL.Int,
+  'email' : IDL.Text,
+  'phone' : IDL.Text,
+});
+
+export const idlService = IDL.Service({
+  'getUsers' : IDL.Func([], [IDL.Vec(User)], ['query']),
+  'registerUser' : IDL.Func([IDL.Text, IDL.Text, IDL.Text], [IDL.Text], []),
+  'verifyOTP' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
+});
 
 export const idlInitArgs = [];
 
-export const idlFactory = ({ IDL }) => { return IDL.Service({}); };
+export const idlFactory = ({ IDL }) => {
+  const User = IDL.Record({
+    'otp' : IDL.Text,
+    'otpVerified' : IDL.Bool,
+    'name' : IDL.Text,
+    'otpTimestamp' : IDL.Int,
+    'email' : IDL.Text,
+    'phone' : IDL.Text,
+  });
+  
+  return IDL.Service({
+    'getUsers' : IDL.Func([], [IDL.Vec(User)], ['query']),
+    'registerUser' : IDL.Func([IDL.Text, IDL.Text, IDL.Text], [IDL.Text], []),
+    'verifyOTP' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
+  });
+};
 
 export const init = ({ IDL }) => { return []; };

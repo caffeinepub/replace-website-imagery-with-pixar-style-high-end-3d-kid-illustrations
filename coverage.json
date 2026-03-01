@@ -1,31 +1,53 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T14:27:41.244Z",
+  "generatedAt": "2026-03-01T19:12:37.566Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 10,
-    "implemented": 10,
+    "total": 13,
+    "implemented": 12,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Redesign the overall app theme to use a blue-green hue gradient color scheme throughout the entire website. Replace the current pastel palette with rich blue-to-green gradients. Update Tailwind config and global CSS variables accordingly. Apply a Pixar HD-style visual aesthetic with vibrant, illustrated, animated elements that appeal to both kids and parents.",
+        "summary": "Redesign the entire frontend with a bright, energetic neon-accented color palette suited for Grade 1–8 students. Use vibrant colors such as electric cyan, neon yellow-green, hot pink, and vivid orange as accents on a clean white/light background. Use modern sans-serif typography (Poppins/Nunito). All icons must be modern (Lucide or similar). The design should be minimalistic yet energetic — clean layouts with bold neon highlights, not cluttered.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/tailwind.config.js",
-          "frontend/src/index.css"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ],
         "matchedFiles": [
-          "frontend/tailwind.config.js",
-          "frontend/src/index.css"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ]
       },
       {
         "id": "REQ-10",
-        "summary": "Rebuild the Footer to reflect Akshar Learning Hub branding, with quick navigation links, contact details, a brief tagline about phonics education, and copyright information for Akshar Learning Hub.",
+        "summary": "Build a fixed floating WhatsApp button visible on all pages/sections, linking to wa.me/917718823635 with a pre-filled inquiry message for Akshar Learning Hub.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/WhatsAppButton.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/WhatsAppButton.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Build a responsive fixed navigation header with the Akshar Learning Hub logo/name, nav links to all sections (Home, About, Services, Downloads, Contact), an 'Enroll Now' CTA button with neon accent styling, and a mobile hamburger menu.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Build a site Footer with Akshar Learning Hub branding, quick navigation links, a list of programs/services, and contact info (phone and address only, no email). Include the WhatsApp link.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/components/Footer.tsx"
@@ -35,8 +57,15 @@
         ]
       },
       {
+        "id": "REQ-13",
+        "summary": "Implement the Motoko backend actor to store user sign-up data (name, email, phone number) submitted during the OTP gated download flow. Expose functions: registerUser(name: Text, email: Text, phone: Text) : async Text (returns generated OTP), verifyOTP(email: Text, otp: Text) : async Bool (validates OTP), and getUsers() : async [User] (admin query). Store records in a stable var array or HashMap.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
         "id": "REQ-2",
-        "summary": "Rebuild the Hero/Landing section with a full-width animated welcome area featuring the Akshar Learning Hub branding, a bold headline about phonics-based reading and writing, a short value proposition, a prominent call-to-action button (e.g., 'Start Learning'), and a Pixar-style illustrated hero image of kids learning. Include scroll-triggered entrance animations.",
+        "summary": "Build a Hero/Home section as the landing area for Akshar Learning Hub. Include the firm name 'Akshar Learning Hub', a compelling tagline, a brief intro about the tutoring services, and two CTA buttons: 'Book Free Demo' and 'Explore Programs'. Apply energetic neon-accented styling with animated elements.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/components/Hero.tsx"
@@ -47,138 +76,126 @@
       },
       {
         "id": "REQ-3",
-        "summary": "Create an 'About Akshar Learning Hub' section that describes the organization's mission, vision, and approach to phonics-based education. Include animated infographic-style elements, Pixar-style illustrations, and engaging copy aimed at both parents and kids. Highlight the unique teaching methodology and the importance of phonics.",
+        "summary": "Build an About section highlighting Akshar Learning Hub's positive learning environment. Emphasize: student discipline, attention to detail to avoid silly mistakes, life skills development, social growth, and increased student confidence. Include placeholder testimonial-style highlights from students and parents.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/About.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/About.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/About.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/About.tsx"
         ]
       },
       {
         "id": "REQ-4",
-        "summary": "Create an 8-Month Phonics Program section that details the full curriculum from Beginner to Advanced. Structure it as three phases: Beginner (Months 1–3), Intermediate (Months 4–6), and Advanced (Months 7–8). Each phase should list learning objectives, skills covered, and materials provided. Use animated progress-style cards or timeline layout. All materials are provided by Akshar Learning Hub.",
+        "summary": "Build individual service sections for each of the following Akshar Learning Hub offerings, each with its own dedicated section/card layout, description, target grade range, and a modern icon: (1) After School Education Support (Tuitions) for Grade 1–8, (2) Phonics program, (3) Maths coaching, (4) Special Subject Mentoring, (5) Scholarship & Exam Preparation for Grade 5–10. Each service section must be visually distinct with neon-accented styling.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/ProgramOverview.tsx",
+          "frontend/src/components/Services.tsx",
           "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/ProgramOverview.tsx",
+          "frontend/src/components/Services.tsx",
           "frontend/src/App.tsx"
         ]
       },
       {
         "id": "REQ-5",
-        "summary": "Rebuild the interactive phonics activities section to include: (1) an alphabet pronunciation demo where every letter's phonetic sound follows strict phonics/phonetics rules (not letter names), (2) a letter-sound matching quiz, and (3) a word pronunciation exercise where kids can hear words spoken. All activities must be embedded in the main website page as a 'Try It' demo section. Use kid-friendly UI with Pixar-style character illustrations as decorative elements.",
+        "summary": "Build a Testimonials/Results section with placeholder student and parent success stories. Include at least 4–6 placeholder testimonial cards with names, roles (parent/student), grade level, and a short positive quote. Use a carousel or grid layout.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/utils/audioHelper.ts",
-          "frontend/src/components/activities/LetterSoundMatching.tsx",
-          "frontend/src/components/activities/PronunciationPractice.tsx",
-          "frontend/src/components/activities/SoundRecognition.tsx",
-          "frontend/src/components/PhonicsActivitiesDemo.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/Testimonials.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/utils/audioHelper.ts",
-          "frontend/src/components/activities/LetterSoundMatching.tsx",
-          "frontend/src/components/activities/PronunciationPractice.tsx",
-          "frontend/src/components/activities/SoundRecognition.tsx",
-          "frontend/src/components/PhonicsActivitiesDemo.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/Testimonials.tsx"
         ]
       },
       {
         "id": "REQ-6",
-        "summary": "Create a 'Learning Strategies & Modern Teaching Methods' section featuring animated infographics. Include strategies such as multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Present modern teaching methods like gamification, spaced repetition, and interactive storytelling. Use scroll-triggered animations and icon-based visual cards.",
+        "summary": "Build a Downloads section with three categories: (1) Free Downloads — openly accessible worksheets and materials with a direct download button; (2) Sign-up Required Downloads — gated by email + phone OTP verification before download is unlocked; (3) Paid Downloads — clicking redirects the user to a Payment page showing UPI/QR placeholder. Include placeholder cards for future uploads with clear labels indicating the material type (e.g., Phonics Workbook, Maths Worksheet, Past Exam Paper).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/LearningStrategies.tsx",
+          "frontend/src/components/Downloads.tsx",
           "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/LearningStrategies.tsx",
+          "frontend/src/components/Downloads.tsx",
           "frontend/src/App.tsx"
         ]
       },
       {
         "id": "REQ-7",
-        "summary": "Create a parent testimonials section with at least 4–6 testimonials written in natural, conversational language as if real parents are speaking. Each testimonial should include a parent name, child's approximate age/grade, a short story or experience, and a star rating. Display them in an animated carousel or card layout. Avoid formal or corporate language.",
+        "summary": "Implement a simulated OTP verification flow for sign-up gated downloads. When a user clicks a gated download, show a modal asking for their name, email address, and phone number. Validate email format and phone number format (10-digit Indian mobile). On submission, generate a 6-digit OTP, display it on-screen (simulated delivery — show OTP in the UI with a note that it would be sent via SMS in production), store the user's email and phone in the Motoko backend, and require the user to enter the OTP to proceed. On correct OTP entry, unlock the download.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Testimonials.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/OTPModal.tsx",
+          "frontend/src/components/Downloads.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/Testimonials.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/OTPModal.tsx",
+          "frontend/src/components/Downloads.tsx"
         ]
       },
       {
         "id": "REQ-8",
-        "summary": "Create a Contact Information section at the bottom of the website. Include a contact form with fields for Name, Email, Phone Number, Child's Age, and Message. Also display address, phone number, email address, and social media links as static info. Style with the blue-green theme and include a friendly Pixar-style illustration nearby.",
+        "summary": "Build a Payment page/section for paid worksheet purchases. This page should display a placeholder UPI QR code image (with a note to replace it), a placeholder UPI ID field (e.g., 'yourname@upi'), and instructions to complete payment and contact via WhatsApp to receive the material. Include a WhatsApp link for post-payment confirmation.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Contact.tsx",
+          "frontend/src/components/Payment.tsx",
           "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/Contact.tsx",
+          "frontend/src/components/Payment.tsx",
           "frontend/src/App.tsx"
         ]
       },
       {
         "id": "REQ-9",
-        "summary": "Rebuild the site navigation header to reflect all new sections of the Akshar Learning Hub website: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Make it sticky with a smooth scroll behavior to each section. Use the Akshar Learning Hub logo/name in the header. Include a mobile-responsive hamburger menu.",
+        "summary": "Build a Contact section with the following details: Phone number 7718823635 (clickable tel: link), a direct WhatsApp link pre-filled with an inquiry message to 7718823635, and the address: Opposite Pratibha College, Chinchwad, Pune 411019. Do NOT include an email address. The section should use modern card/icon layout with neon accents.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Header.tsx"
+          "frontend/src/components/Contact.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/Header.tsx"
+          "frontend/src/components/Contact.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
+    "backend/main.mo",
     "build-request.json",
-    "build-template/README.md",
-    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/index.html",
-    "frontend/public/assets/generated/about-teacher-kids.dim_900x600.png",
-    "frontend/public/assets/generated/alphabet-banner.dim_1200x400.png",
-    "frontend/public/assets/generated/hero-kids-reading.dim_1400x700.png",
-    "frontend/public/assets/generated/program-journey.dim_900x500.png",
-    "frontend/public/assets/generated/testimonials-parents.dim_800x500.png",
+    "frontend/public/assets/generated/about-illustration.dim_800x500.png",
+    "frontend/public/assets/generated/akshar-logo.dim_400x400.png",
+    "frontend/public/assets/generated/hero-banner.dim_1440x600.png",
+    "frontend/public/assets/generated/payment-qr-placeholder.dim_300x300.png",
+    "frontend/public/assets/generated/services-icons.dim_1200x300.png",
     "frontend/src/App.tsx",
-    "frontend/src/assets/generatedImages.ts",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
     "frontend/src/components/About.tsx",
+    "frontend/src/components/AksharPhonics.tsx",
+    "frontend/src/components/AksharTuitions.tsx",
     "frontend/src/components/Contact.tsx",
-    "frontend/src/components/Features.tsx",
+    "frontend/src/components/Downloads.tsx",
     "frontend/src/components/Footer.tsx",
-    "frontend/src/components/Gallery.tsx",
     "frontend/src/components/Header.tsx",
     "frontend/src/components/Hero.tsx",
-    "frontend/src/components/Illustration.tsx",
     "frontend/src/components/LearningStrategies.tsx",
+    "frontend/src/components/OTPModal.tsx",
+    "frontend/src/components/Payment.tsx",
     "frontend/src/components/PhonicsActivitiesDemo.tsx",
     "frontend/src/components/ProgramOverview.tsx",
+    "frontend/src/components/Services.tsx",
     "frontend/src/components/Testimonials.tsx",
-    "frontend/src/components/activities/ActivityLayout.tsx",
-    "frontend/src/components/activities/LetterSoundMatching.tsx",
-    "frontend/src/components/activities/PronunciationPractice.tsx",
-    "frontend/src/components/activities/SoundRecognition.tsx",
-    "frontend/src/components/activities/WordBuilding.tsx",
-    "frontend/src/components/activities/WordCard.tsx",
+    "frontend/src/components/WhatsAppButton.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
     "frontend/src/index.css",
-    "frontend/src/utils/audioHelper.ts",
     "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",

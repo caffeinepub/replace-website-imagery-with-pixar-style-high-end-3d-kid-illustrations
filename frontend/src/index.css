@@ -1,131 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --radius: 1rem;
-        /* Blue-Green Hue Gradient Palette */
-        --background: 0.98 0.008 200;
-        --foreground: 0.18 0.04 220;
-        --card: 1 0 0;
-        --card-foreground: 0.18 0.04 220;
-        --popover: 1 0 0;
-        --popover-foreground: 0.18 0.04 220;
-        /* Primary: Vibrant Ocean Blue */
-        --primary: 0.52 0.18 240;
-        --primary-foreground: 0.98 0.005 200;
-        /* Secondary: Vibrant Teal-Green */
-        --secondary: 0.58 0.16 175;
-        --secondary-foreground: 0.98 0.005 175;
-        /* Muted: Light blue-gray */
-        --muted: 0.94 0.02 210;
-        --muted-foreground: 0.50 0.04 220;
-        /* Accent: Bright Cyan-Green */
-        --accent: 0.72 0.14 185;
-        --accent-foreground: 0.15 0.04 200;
-        /* Success: Emerald Green */
-        --success: 0.60 0.18 155;
-        --success-foreground: 0.98 0.005 155;
-        /* Destructive: Warm Red */
-        --destructive: 0.60 0.20 25;
-        --destructive-foreground: 0.98 0.005 25;
-        --border: 0.88 0.04 210;
-        --input: 0.88 0.04 210;
-        --ring: 0.52 0.18 240;
-        --chart-1: 0.52 0.18 240;
-        --chart-2: 0.58 0.16 175;
-        --chart-3: 0.72 0.14 185;
-        --chart-4: 0.60 0.18 155;
-        --chart-5: 0.65 0.15 210;
-    }
+  :root {
+    --background: oklch(0.99 0.005 240);
+    --foreground: oklch(0.15 0.02 240);
 
-    .dark {
-        --background: 0.14 0.03 225;
-        --foreground: 0.95 0.01 200;
-        --card: 0.18 0.03 225;
-        --card-foreground: 0.95 0.01 200;
-        --popover: 0.16 0.03 225;
-        --popover-foreground: 0.95 0.01 200;
-        --primary: 0.62 0.18 240;
-        --primary-foreground: 0.12 0.03 225;
-        --secondary: 0.55 0.16 175;
-        --secondary-foreground: 0.95 0.01 175;
-        --muted: 0.22 0.03 225;
-        --muted-foreground: 0.65 0.03 210;
-        --accent: 0.65 0.14 185;
-        --accent-foreground: 0.12 0.03 200;
-        --success: 0.58 0.18 155;
-        --success-foreground: 0.95 0.01 155;
-        --destructive: 0.58 0.20 25;
-        --destructive-foreground: 0.95 0.01 25;
-        --border: 0.26 0.04 225;
-        --input: 0.26 0.04 225;
-        --ring: 0.62 0.18 240;
-        --chart-1: 0.62 0.18 240;
-        --chart-2: 0.55 0.16 175;
-        --chart-3: 0.65 0.14 185;
-        --chart-4: 0.58 0.18 155;
-        --chart-5: 0.60 0.15 210;
-    }
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.02 240);
 
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-        font-feature-settings: "rlig" 1, "calt" 1;
-        scroll-behavior: smooth;
-    }
-}
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.02 240);
 
-@layer base {
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-bold;
-    }
+    --primary: oklch(0.55 0.22 260);
+    --primary-foreground: oklch(1 0 0);
+
+    --secondary: oklch(0.95 0.02 240);
+    --secondary-foreground: oklch(0.25 0.05 240);
+
+    --muted: oklch(0.96 0.01 240);
+    --muted-foreground: oklch(0.5 0.04 240);
+
+    --accent: oklch(0.92 0.05 200);
+    --accent-foreground: oklch(0.2 0.05 200);
+
+    --destructive: oklch(0.6 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+
+    --border: oklch(0.9 0.02 240);
+    --input: oklch(0.9 0.02 240);
+    --ring: oklch(0.55 0.22 260);
+
+    --radius: 0.75rem;
+
+    /* Neon accent colors */
+    --neon-cyan: oklch(0.78 0.2 195);
+    --neon-cyan-glow: oklch(0.78 0.2 195 / 0.4);
+    --neon-green: oklch(0.82 0.22 145);
+    --neon-green-glow: oklch(0.82 0.22 145 / 0.4);
+    --neon-pink: oklch(0.68 0.28 350);
+    --neon-pink-glow: oklch(0.68 0.28 350 / 0.4);
+    --neon-orange: oklch(0.75 0.22 45);
+    --neon-orange-glow: oklch(0.75 0.22 45 / 0.4);
+    --neon-yellow: oklch(0.88 0.22 100);
+    --neon-yellow-glow: oklch(0.88 0.22 100 / 0.4);
+    --neon-purple: oklch(0.65 0.25 290);
+    --neon-purple-glow: oklch(0.65 0.25 290 / 0.4);
+  }
+
+  .dark {
+    --background: oklch(0.1 0.02 240);
+    --foreground: oklch(0.95 0.01 240);
+    --card: oklch(0.15 0.02 240);
+    --card-foreground: oklch(0.95 0.01 240);
+    --popover: oklch(0.15 0.02 240);
+    --popover-foreground: oklch(0.95 0.01 240);
+    --primary: oklch(0.65 0.22 260);
+    --primary-foreground: oklch(0.1 0.02 240);
+    --secondary: oklch(0.2 0.03 240);
+    --secondary-foreground: oklch(0.9 0.01 240);
+    --muted: oklch(0.2 0.02 240);
+    --muted-foreground: oklch(0.65 0.04 240);
+    --accent: oklch(0.25 0.05 200);
+    --accent-foreground: oklch(0.9 0.02 200);
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.25 0.03 240);
+    --input: oklch(0.25 0.03 240);
+    --ring: oklch(0.65 0.22 260);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
 }
 
 @layer utilities {
-    .success {
-        background-color: oklch(var(--success));
-        color: oklch(var(--success-foreground));
-    }
+  .fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
 
-    .gradient-blue-green {
-        background: linear-gradient(135deg, oklch(0.52 0.18 240), oklch(0.58 0.16 175));
-    }
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
 
-    .gradient-text {
-        background: linear-gradient(135deg, oklch(0.52 0.18 240), oklch(0.58 0.16 175));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px var(--neon-cyan-glow), 0 0 40px var(--neon-cyan-glow);
+  }
 
-    .animate-fade-in {
-        animation: fadeIn 0.6s ease-out forwards;
-    }
+  .neon-glow-green {
+    box-shadow: 0 0 20px var(--neon-green-glow), 0 0 40px var(--neon-green-glow);
+  }
 
-    .animate-slide-up {
-        animation: slideUp 0.6s ease-out forwards;
-    }
+  .neon-glow-pink {
+    box-shadow: 0 0 20px var(--neon-pink-glow), 0 0 40px var(--neon-pink-glow);
+  }
 
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
+  .neon-glow-orange {
+    box-shadow: 0 0 20px var(--neon-orange-glow), 0 0 40px var(--neon-orange-glow);
+  }
+
+  .neon-border-cyan {
+    border-color: var(--neon-cyan);
+  }
+
+  .neon-border-green {
+    border-color: var(--neon-green);
+  }
+
+  .neon-border-pink {
+    border-color: var(--neon-pink);
+  }
+
+  .neon-border-orange {
+    border-color: var(--neon-orange);
+  }
+
+  .text-neon-cyan {
+    color: var(--neon-cyan);
+  }
+
+  .text-neon-green {
+    color: var(--neon-green);
+  }
+
+  .text-neon-pink {
+    color: var(--neon-pink);
+  }
+
+  .text-neon-orange {
+    color: var(--neon-orange);
+  }
+
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+  }
+
+  .text-neon-purple {
+    color: var(--neon-purple);
+  }
+
+  .bg-neon-cyan {
+    background-color: var(--neon-cyan);
+  }
+
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+
+  .bg-neon-orange {
+    background-color: var(--neon-orange);
+  }
+
+  .pulse-ring {
+    animation: pulseRing 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes pulseRing {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--neon-green-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 12px transparent;
+  }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
 }

@@ -1,228 +1,237 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Akshar Learning Hub Full Website Redesign - Frontend Implementation",
+  "title": "Akshar Learning Hub Frontend Redesign with Neon-Accented Theme",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Redesign app theme to blue-green hue gradient with Pixar HD-style aesthetic",
+      "summary": "Redesign entire frontend with bright, energetic neon-accented color palette (electric cyan, neon yellow-green, hot pink, vivid orange) on clean white background using Poppins/Nunito typography and modern Lucide icons",
       "acceptanceCriteria": [
-        "Blue-to-green gradient palette is applied consistently across all sections",
-        "Tailwind config and CSS variables reflect the new blue-green hue theme",
-        "Visual style is vibrant and Pixar-inspired throughout"
+        "Neon accent colors are visibly present across sections (buttons, highlights, badges, borders)",
+        "Overall layout remains clean and minimalistic",
+        "Typography uses Poppins and/or Nunito",
+        "Icons are modern and consistent throughout"
       ],
       "file_operations": [
         {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Replace the current OKLCH color system with a vibrant blue-to-green gradient palette. Define primary colors using blue hues (e.g., cyan, sky, blue) and secondary colors using green hues (e.g., teal, emerald, green). Add gradient variants for backgrounds and accent colors. Maintain the existing border radius and animation configurations."
-        },
-        {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update CSS custom properties to use the new blue-green gradient color scheme. Replace the pastel OKLCH color variables with vibrant blue-to-green gradient values for both light and dark modes. Add gradient utility classes for backgrounds and borders. Include Pixar-style visual effects like subtle shadows, smooth transitions, and vibrant color overlays."
+          "description": "Add neon accent color CSS custom properties (--neon-cyan: oklch(0.75 0.2 195), --neon-yellow-green: oklch(0.85 0.22 135), --neon-pink: oklch(0.7 0.3 350), --neon-orange: oklch(0.75 0.22 45)) and update existing theme tokens to integrate these colors for primary accents, borders, and highlights while keeping the base background light/white"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend theme colors to include neon accent variants (neonCyan, neonYellow, neonPink, neonOrange) mapped to the CSS custom properties, ensure Poppins and Nunito are primary font families, and add utility classes for neon glow effects (box-shadow with neon colors)"
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Rebuild Hero/Landing section with animated welcome, branding, CTA, and Pixar-style illustration",
+      "summary": "Build Hero/Home landing section displaying Akshar Learning Hub firm name, compelling tagline, brief intro, and two CTA buttons (Book Free Demo, Explore Programs) with energetic neon-accented styling and animations",
       "acceptanceCriteria": [
-        "Hero section displays Akshar Learning Hub name and tagline prominently",
-        "Call-to-action button is visible and styled in brand colors",
-        "Hero image uses the Pixar-style generated asset",
-        "Entrance animations trigger on page load"
+        "Hero section displays firm name Akshar Learning Hub prominently",
+        "Tagline and brief description are present",
+        "Book Free Demo and Explore Programs CTA buttons are visible",
+        "Section uses neon-accented design with animations"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Hero.tsx",
           "operation": "modify",
-          "description": "Rebuild the Hero component to feature Akshar Learning Hub branding with a bold headline about phonics-based reading and writing. Replace existing content with a value proposition emphasizing the 8-month phonics program. Update the CTA button to say 'Start Learning' styled with the blue-green gradient theme. Replace the hero image reference to use the generated asset frontend/public/assets/generated/hero-kids-reading.dim_1400x700.png. Add scroll-triggered entrance animations using CSS transitions or a lightweight animation library for fade-in and slide-up effects on mount."
+          "description": "Replace existing hero content to prominently display Akshar Learning Hub as the main headline, add a compelling tagline about tutoring excellence for grades 1-8, include a brief introduction paragraph about the services, replace existing CTAs with Book Free Demo (scrolls to contact) and Explore Programs (scrolls to services) buttons styled with neon accent colors and glow effects, integrate the generated hero banner image from frontend/public/assets/generated/akshar-hero.dim_1440x900.png as background or featured visual, and add fade-in/slide-up animations on mount"
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Create About Akshar Learning Hub section with mission, vision, and animated infographics",
+      "summary": "Build About section highlighting positive learning environment with focus on student discipline, attention to detail, life skills, social growth, and confidence, including placeholder testimonial-style highlights",
       "acceptanceCriteria": [
-        "About section is present with mission and vision content",
-        "Section includes at least one illustrated/animated element",
-        "Content addresses both parent and child audiences"
+        "About section covers discipline, life skills, confidence, social growth",
+        "Positive environment messaging is clearly communicated",
+        "Section uses modern card or highlight layouts"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/About.tsx",
-          "operation": "create",
-          "description": "Create a new About component describing Akshar Learning Hub's mission (teaching phonics-based literacy), vision (empowering children to read and write confidently), and unique approach. Include 2-3 animated infographic-style cards highlighting key differentiators such as structured curriculum, multi-sensory learning, and parent involvement. Use the generated asset frontend/public/assets/generated/about-teacher-kids.dim_900x600.png as a supporting illustration. Apply scroll-triggered animations for cards and copy that engages both parents (outcome-focused) and kids (fun and colorful language). Style with the blue-green gradient theme."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the new About component below the Hero section. Ensure it is part of the main page layout and scrollable from the navigation menu."
+          "description": "Replace existing about content to emphasize Akshar Learning Hub positive learning environment, create four highlight cards covering: (1) Student Discipline and Focus, (2) Attention to Detail (avoiding silly mistakes), (3) Life Skills and Social Growth, (4) Building Student Confidence, each with a modern Lucide icon, title, and short description, include 2-3 placeholder testimonial-style quotes from students/parents praising the environment, integrate the generated about illustration from frontend/public/assets/generated/akshar-about.dim_900x700.png, and apply neon-accented borders/highlights with fade-up scroll animations"
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Create 8-Month Phonics Program section detailing Beginner, Intermediate, and Advanced phases",
+      "summary": "Build five individual service sections/cards for After School Tuitions (Grade 1-8), Phonics program, Maths coaching, Special Subject Mentoring, and Scholarship/Exam Prep (Grade 5-10), each with dedicated layout, description, grade range, and modern icon",
       "acceptanceCriteria": [
-        "Three program phases (Beginner, Intermediate, Advanced) are displayed",
-        "Each phase lists learning goals and included materials",
-        "Timeline or card layout is animated and visually appealing",
-        "Mention that all materials are provided by Akshar Learning Hub"
+        "Five separate service cards/sections are rendered",
+        "Each service has a title, description, grade range, and modern icon",
+        "Scholarship and Exam Prep clearly targets Grade 5–10",
+        "Phonics and Maths are listed as standalone services"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ProgramOverview.tsx",
+          "path": "frontend/src/components/Services.tsx",
           "operation": "create",
-          "description": "Create a ProgramOverview component structured as a timeline or three-phase card layout. Phase 1 (Beginner, Months 1-3): learning letter sounds, simple CVC words, and basic blending. Phase 2 (Intermediate, Months 4-6): digraphs, blends, sight words, and sentence reading. Phase 3 (Advanced, Months 7-8): complex words, fluency, comprehension strategies. Each card should list learning objectives, skills covered, and note that workbooks, flashcards, and materials are provided by Akshar Learning Hub. Use the generated asset frontend/public/assets/generated/program-journey.dim_900x500.png as a visual centerpiece. Add animated progress indicators or timeline connectors styled with the blue-green gradient. Include scroll-triggered animations for each phase card."
+          "description": "Create a new Services section component displaying five distinct service cards in a responsive grid layout: (1) After School Education Support (Tuitions) - Grades 1-8 with GraduationCap icon, (2) Phonics Program - Early learners with Volume2 icon, (3) Maths Coaching - All grades with Calculator icon, (4) Special Subject Mentoring - Personalized support with Users icon, (5) Scholarship and Exam Preparation - Grades 5-10 with Trophy icon. Each card includes service title, detailed description (2-3 sentences), target grade range badge, modern Lucide icon at top, and neon-accented borders/highlights. Use a two-column or three-column responsive grid with fade-up animations on scroll."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the ProgramOverview component below the About section. Ensure it is accessible via the navigation menu."
+          "description": "Import and add the new Services component after the About section and before Testimonials, ensuring smooth scroll navigation integration and proper section ID for header navigation"
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Rebuild interactive phonics activities with alphabet pronunciation demo, letter-sound quiz, and word pronunciation using strict phonics rules",
+      "summary": "Build Testimonials/Results section with 4-6 placeholder testimonial cards showing student and parent success stories in carousel or grid layout",
       "acceptanceCriteria": [
-        "All 26 letter sounds use phonics pronunciation (e.g., 'a' as in 'apple', not 'ay')",
-        "Letter-sound matching quiz is functional with score tracking",
-        "Word pronunciation cards allow kids to hear words spoken",
-        "Activities section is clearly labeled as a demo/try-it area"
+        "At least 4 placeholder testimonial cards are shown",
+        "Each card has a name, role (parent or student), and quote",
+        "Layout is carousel or responsive grid"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/utils/audioHelper.ts",
+          "path": "frontend/src/components/Testimonials.tsx",
           "operation": "modify",
-          "description": "Update the playLetterSound function to ensure all 26 alphabet sounds strictly follow phonics/phonetics rules. Map each letter to its phonetic sound (e.g., 'a' -> /æ/ as in 'apple', 'b' -> /b/, 'c' -> /k/). Use the Web Speech API with carefully tuned parameters (rate, pitch) to produce accurate phonetic pronunciations, not letter names. Verify that vowels use short vowel sounds by default. Add a comment documenting the phonics rules applied for each letter."
-        },
-        {
-          "path": "frontend/src/components/activities/LetterSoundMatching.tsx",
-          "operation": "modify",
-          "description": "Ensure the alphabet grid activity uses the updated audioHelper for phonics-based pronunciation. Add or enhance kid-friendly UI elements with Pixar-style character illustrations using the generated asset frontend/public/assets/generated/mascot-phonics.dim_400x400.png as a decorative element or guide character. Style the grid with the blue-green gradient theme and add playful animations for letter selection."
-        },
-        {
-          "path": "frontend/src/components/activities/PronunciationPractice.tsx",
-          "operation": "modify",
-          "description": "Update the PronunciationPractice component to feature word pronunciation cards that allow kids to hear words spoken using the audioHelper. Ensure all words follow phonics rules. Add the generated asset frontend/public/assets/generated/alphabet-banner.dim_1200x400.png as a decorative header image. Style cards with the blue-green gradient and add hover animations. Ensure this is clearly labeled as part of the 'Try It' demo section."
-        },
-        {
-          "path": "frontend/src/components/activities/SoundRecognition.tsx",
-          "operation": "modify",
-          "description": "Ensure the SoundRecognition quiz component uses phonics-based letter sounds from audioHelper and tracks scores correctly. Enhance the UI with Pixar-style illustrations and the blue-green gradient theme. Add celebratory animations for correct answers. Label this as part of the 'Try It' demo section."
-        },
-        {
-          "path": "frontend/src/components/PhonicsActivitiesDemo.tsx",
-          "operation": "create",
-          "description": "Create a wrapper component that organizes all phonics activities into a unified 'Try It' demo section. Include a header clearly labeled 'Try Our Phonics Activities' with a short description. Display tabs or cards linking to LetterSoundMatching, PronunciationPractice, and SoundRecognition. Style with the blue-green gradient and add the generated asset frontend/public/assets/generated/mascot-phonics.dim_400x400.png as a friendly mascot illustration. Apply consistent spacing and animations."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the PhonicsActivitiesDemo component below the ProgramOverview section. Ensure it is accessible via the navigation menu and clearly integrated into the single-page layout."
+          "description": "Expand existing testimonials component to include 6 placeholder testimonial cards (mix of 3 parents and 3 students from grades 3-8), each card displaying name, role (Parent of Grade X Student or Grade X Student), a positive quote about discipline/confidence/results, and a star rating. Keep the carousel navigation but ensure all cards display in grid on larger screens. Add neon-accented quote styling, modern avatar placeholders using Lucide User icon, and integrate the generated testimonials background from frontend/public/assets/generated/akshar-testimonials.dim_1440x600.png as a subtle background element"
         }
       ]
     },
     {
       "id": "REQ-6",
-      "summary": "Create Learning Strategies & Modern Teaching Methods section with animated infographics",
+      "summary": "Build Downloads section with three categories: Free Downloads (direct), Sign-up Required Downloads (OTP gated), and Paid Downloads (redirect to payment), with placeholder cards for future materials",
       "acceptanceCriteria": [
-        "At least 5 learning strategies are presented with icons or illustrations",
-        "At least 3 modern teaching methods are highlighted",
-        "Section uses scroll-triggered animations",
-        "Content is informative and accessible to parents"
+        "Three clearly labelled download categories are present: Free, Sign-up Required, Paid",
+        "Free download buttons work directly",
+        "Sign-up required downloads trigger the OTP modal before unlocking",
+        "Paid download buttons navigate to the Payment page",
+        "Placeholder cards for future uploads are visible with labels"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/LearningStrategies.tsx",
-          "operation": "create",
-          "description": "Create a LearningStrategies component featuring icon-based visual cards for at least 5 strategies: multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Add 3 modern teaching method cards: gamification, spaced repetition, and interactive storytelling. Each card should include an icon or small illustration, a heading, and a brief parent-friendly description. Use scroll-triggered animations (fade-in, slide-up) for each card as the user scrolls. Style with the blue-green gradient theme and ensure the layout is responsive."
+          "path": "frontend/src/components/Downloads.tsx",
+          "operation": "modify",
+          "description": "Replace existing phonics-only downloads with a three-tabbed interface: (1) Free Downloads tab showing 3-4 placeholder cards (Phonics Workbook Level 1, Maths Worksheet Grade 3, etc.) with direct download buttons using Download icon, (2) Sign-up Required tab showing 3-4 placeholder cards (Advanced Phonics Materials, Exam Papers Grade 5) with Lock icon and Unlock with Sign-up buttons that trigger the OTP modal, (3) Paid Downloads tab showing 2-3 placeholder cards (Complete Question Bank, Scholarship Prep Kit) with IndianRupee icon and Purchase buttons that navigate to /payment route. Each card includes material name, grade level, brief description, and appropriate CTA button. Apply neon-accented styling and use Tabs component from shadcn/ui."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the LearningStrategies component below the PhonicsActivitiesDemo section. Ensure it is accessible via the navigation menu."
+          "description": "Ensure Downloads component is positioned after Services/Testimonials sections with proper section ID, and verify smooth scroll navigation from header works correctly"
         }
       ]
     },
     {
       "id": "REQ-7",
-      "summary": "Create parent testimonials section with natural conversational language and animated carousel",
+      "summary": "Implement frontend OTP verification modal for sign-up gated downloads, collecting name/email/phone, validating formats (email and 10-digit Indian mobile), displaying simulated 6-digit OTP on-screen, and verifying OTP entry to unlock downloads",
       "acceptanceCriteria": [
-        "At least 4 testimonials are present",
-        "Language is conversational and natural, not corporate",
-        "Each testimonial includes parent name, child info, and star rating",
-        "Displayed in an animated carousel or scrollable card layout"
+        "Modal collects name, email, and phone",
+        "Email format and 10-digit phone validation are enforced",
+        "A 6-digit OTP is generated and displayed on-screen after form submission",
+        "OTP entry field appears after submission",
+        "Correct OTP unlocks the download; incorrect OTP shows an error",
+        "User email and phone are stored in the Motoko backend actor",
+        "UI clearly states OTP is simulated"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Testimonials.tsx",
+          "path": "frontend/src/components/OTPModal.tsx",
           "operation": "create",
-          "description": "Create a Testimonials component displaying 4-6 parent testimonials in a carousel or horizontally scrollable card layout. Each testimonial should include: parent name (e.g., 'Priya S.'), child's age/grade (e.g., 'My daughter, 5 years old'), a natural conversational story (e.g., 'She used to struggle with reading, but after joining Akshar, she's reading bedtime stories to us now!'), and a 5-star rating. Avoid formal or corporate language; write as if real parents are speaking. Use the generated asset frontend/public/assets/generated/testimonials-parents.dim_800x500.png as a supporting illustration. Add swipe or navigation controls for the carousel. Style with the blue-green gradient theme and smooth transitions."
+          "description": "Create a modal component using shadcn/ui Dialog that handles the OTP flow: (1) Initial form collecting name (text), email (validated with regex), and phone (validated as 10-digit number starting with 6-9), (2) On submit, call backend registerUser function using the backend interface, display the returned 6-digit OTP prominently in the UI with a clear note indicating OTP would be sent via SMS in production - displayed here for demo purposes, (3) Show OTP input field (6 digits) with a verify button, (4) On verify button click, call backend verifyOTP function, (5) If verification succeeds, show success message and trigger download callback, close modal, (6) If verification fails, show error toast indicating incorrect OTP, (7) Apply neon-accented styling to buttons and borders, use Lucide icons (Mail, Phone, Lock), and ensure mobile-responsive layout"
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Downloads.tsx",
           "operation": "modify",
-          "description": "Import and render the Testimonials component below the LearningStrategies section. Ensure it is accessible via the navigation menu."
+          "description": "Import OTPModal component, add state to manage modal open/close and selected download item, wire Unlock with Sign-up buttons in the Sign-up Required tab to open the OTPModal with the appropriate download callback that triggers when OTP verification succeeds"
         }
       ]
     },
     {
       "id": "REQ-8",
-      "summary": "Create Contact Information section with form and static contact details",
+      "summary": "Build Payment page displaying placeholder UPI QR code, UPI ID field, payment instructions, and WhatsApp link for post-payment material delivery confirmation",
       "acceptanceCriteria": [
-        "Contact form includes Name, Email, Phone, Child's Age, and Message fields",
-        "Static contact details (address, phone, email) are displayed",
-        "Form has basic client-side validation",
-        "Section is styled consistently with the blue-green brand theme"
+        "Payment page shows a placeholder QR code image",
+        "Placeholder UPI ID is displayed with an edit note",
+        "Payment instructions are clearly written",
+        "WhatsApp link for post-payment contact is present"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Contact.tsx",
+          "path": "frontend/src/components/Payment.tsx",
           "operation": "create",
-          "description": "Create a Contact component featuring a contact form with fields for Name (text), Email (email validation), Phone Number (tel), Child's Age (number or select), and Message (textarea). Add client-side validation for required fields and email format. Include static contact information: address, phone number, email, and social media links (placeholders or icons). Position a Pixar-style illustration nearby using a suitable generated asset (e.g., frontend/public/assets/generated/about-teacher-kids.dim_900x600.png or another friendly image). Style the form and section with the blue-green gradient theme. Note: Form submissions are frontend-only; no backend persistence is required."
+          "description": "Create a Payment page component displaying: (1) Page title Complete Your Purchase, (2) The generated UPI QR placeholder image from frontend/public/assets/generated/payment-qr-placeholder.dim_300x300.png (if available, otherwise use a placeholder rectangle with text), (3) Placeholder UPI ID field showing aksharlearning@upi with an edit note indicating to replace with actual UPI ID, (4) Step-by-step payment instructions: Scan QR code or use UPI ID, Complete payment via your UPI app, Take a screenshot of payment confirmation, Contact us on WhatsApp to receive your materials, (5) WhatsApp contact button linking to wa.me/917718823635 with pre-filled message indicating payment completion for material, (6) Apply neon-accented card styling, use Lucide icons (QrCode, Smartphone, CheckCircle), and ensure mobile-responsive layout"
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the Contact component below the Testimonials section. Ensure it is accessible via the navigation menu."
+          "description": "Import React Router (react-router-dom) if not already present, wrap the app content in a BrowserRouter, create Routes with Route for / (home/all sections) and /payment (Payment component), ensure navigation from Paid Downloads buttons uses navigate() or Link to /payment, and maintain smooth scroll behavior for home page section navigation"
         }
       ]
     },
     {
       "id": "REQ-9",
-      "summary": "Rebuild navigation header with all sections, sticky behavior, smooth scroll, and mobile hamburger",
+      "summary": "Build Contact section with phone 7718823635 (clickable tel link), WhatsApp link with pre-filled message, address Opposite Pratibha College, Chinchwad, Pune 411019 (no email), using modern card/icon layout with neon accents",
       "acceptanceCriteria": [
-        "Navigation includes links to all major sections",
-        "Smooth scroll behavior works for all navigation links",
-        "Header is sticky and collapses to hamburger on mobile",
-        "Akshar Learning Hub branding is displayed in the header"
+        "Phone number 7718823635 is displayed and clickable (tel: link)",
+        "WhatsApp button links to wa.me/917718823635 with a pre-filled message",
+        "Address Opposite Pratibha College, Chinchwad, Pune 411019 is shown",
+        "No email address is displayed",
+        "Section uses modern icon and card layout"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Header.tsx",
+          "path": "frontend/src/components/Contact.tsx",
           "operation": "modify",
-          "description": "Rebuild the Header component to display 'Akshar Learning Hub' branding (logo and name). Replace existing navigation links with: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Implement smooth scroll behavior for all links using anchor tags with scroll-behavior CSS or a scroll utility. Make the header sticky (position: sticky or fixed) with appropriate z-index. Add a mobile-responsive hamburger menu that collapses navigation links on smaller screens. Style with the blue-green gradient theme and ensure active section highlighting."
+          "description": "Replace existing contact section content: (1) Remove any email field/display completely, (2) Display phone number 7718823635 as a clickable tel: link with Phone icon, (3) Add WhatsApp button linking to wa.me/917718823635 with pre-filled message indicating inquiry about Akshar Learning Hub programs, styled with neon-green accent, (4) Display address Opposite Pratibha College, Chinchwad, Pune 411019 with MapPin icon in a card, (5) Keep the contact form if it exists but remove email field from it OR replace form entirely with just the info cards and WhatsApp CTA, (6) Apply neon-accented borders to contact info cards, use modern Lucide icons throughout, ensure mobile-responsive two-column layout"
         }
       ]
     },
     {
       "id": "REQ-10",
-      "summary": "Rebuild Footer with Akshar Learning Hub branding, quick links, and contact details",
+      "summary": "Build fixed floating WhatsApp button visible on all pages linking to wa.me/917718823635 with pre-filled inquiry message",
       "acceptanceCriteria": [
-        "Footer displays Akshar Learning Hub name and tagline",
-        "Quick links to all major sections are included",
-        "Contact info is shown in the footer",
-        "Copyright text references Akshar Learning Hub"
+        "Floating WhatsApp button is always visible on screen",
+        "Clicking opens WhatsApp with the correct number and a pre-filled message",
+        "Button does not obstruct main content significantly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WhatsAppButton.tsx",
+          "operation": "modify",
+          "description": "Update existing WhatsAppButton component to ensure: (1) Link points to wa.me/917718823635, (2) Pre-filled message indicates inquiry about Akshar Learning Hub tutoring programs, (3) Button is fixed position (bottom-right corner with z-index above other content), (4) Uses neon-green accent color with glow effect on hover, (5) Displays WhatsApp icon (MessageCircle or use SVG), (6) Includes a subtle pulse animation to draw attention, (7) Remains visible and accessible on mobile devices without blocking key UI elements"
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build responsive fixed navigation header with logo/name, nav links to all sections (Home, About, Services, Downloads, Contact), neon-accented Enroll Now CTA button, and mobile hamburger menu",
+      "acceptanceCriteria": [
+        "Header is fixed at the top on scroll",
+        "Nav links scroll smoothly to each section",
+        "Enroll Now button is prominently styled with neon accent",
+        "Mobile hamburger menu works on small screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Update existing header component: (1) Replace logo/branding with Akshar Learning Hub text or integrate the generated logo from frontend/public/assets/generated/akshar-logo.dim_400x400.png if suitable, (2) Update nav links array to include: Home (scroll to hero), About (scroll to about), Services (scroll to services), Downloads (scroll to downloads), Contact (scroll to contact), (3) Replace existing CTA button with Enroll Now button styled with neon accent color (pink or cyan) and glow effect, linking to contact section, (4) Ensure header is fixed (sticky) at top with backdrop blur for modern effect, (5) Verify mobile hamburger menu functionality with smooth slide-in/out animation, (6) Apply neon-accented underline effect on active/hover nav links, ensure header remains visible and accessible across all pages/routes"
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build site Footer with branding, quick nav links, programs/services list, and contact info (phone and address only, no email), including WhatsApp link",
+      "acceptanceCriteria": [
+        "Footer displays firm name and tagline",
+        "Quick nav links are present",
+        "All services are listed",
+        "Phone and address are shown; no email",
+        "WhatsApp link is included"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Footer.tsx",
           "operation": "modify",
-          "description": "Rebuild the Footer component to display 'Akshar Learning Hub' branding and a brief tagline about phonics education (e.g., 'Empowering young readers through phonics'). Add quick navigation links to all major sections: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Display contact details (address, phone, email). Update the copyright text to reference Akshar Learning Hub (e.g., '© 2025 Akshar Learning Hub. All rights reserved.'). Remove or replace caffeine.ai attribution. Style with the blue-green gradient theme."
+          "description": "Update existing footer component: (1) Ensure branding section displays Akshar Learning Hub name and tagline Excellence in Education for Grades 1-8, (2) Quick Links column: Home, About, Services, Downloads, Contact (scroll links), (3) Programs/Services column: list all five services (After School Tuitions, Phonics Program, Maths Coaching, Special Subject Mentoring, Scholarship and Exam Prep), (4) Contact column: Phone 7718823635 (tel: link), Address Opposite Pratibha College, Chinchwad, Pune 411019, WhatsApp button/link to wa.me/917718823635, (5) Remove any email display or email link, (6) Apply neon-accented dividers and links with hover glow effects, use four-column responsive grid collapsing to single column on mobile, add copyright line Akshar Learning Hub. All rights reserved."
         }
       ]
     }

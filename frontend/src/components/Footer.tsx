@@ -1,75 +1,95 @@
-import { BookOpen, Heart } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
-import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si';
+import { BookOpen, Phone, MapPin, MessageCircle, Heart } from "lucide-react";
 
 interface FooterProps {
-  onNavigate: (section: string) => void;
+  onNavigateHome: () => void;
 }
 
-const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About Us' },
-  { id: 'programs', label: 'Programs' },
-  { id: 'activities', label: 'Activities' },
-  { id: 'strategies', label: 'Learning Tips' },
-  { id: 'testimonials', label: 'Testimonials' },
-  { id: 'contact', label: 'Contact' },
+const quickLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Downloads", href: "#downloads" },
+  { label: "Contact", href: "#contact" },
 ];
 
-export function Footer({ onNavigate }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-  const appIdentifier = typeof window !== 'undefined'
-    ? encodeURIComponent(window.location.hostname)
-    : 'akshar-learning-hub';
+const programs = [
+  "After School Tuitions",
+  "Phonics Program",
+  "Maths Coaching",
+  "Special Subject Mentoring",
+  "Scholarship & Exam Prep",
+];
+
+const whatsappUrl = `https://wa.me/917718823635?text=${encodeURIComponent("Hello! I'm interested in Akshar Learning Hub's programs.")}`;
+
+export default function Footer({ onNavigateHome }: FooterProps) {
+  const scrollTo = (href: string) => {
+    if (window.location.hash === "#payment") {
+      onNavigateHome();
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer
-      className="border-t border-border"
-      style={{ background: 'linear-gradient(180deg, oklch(0.16 0.04 230) 0%, oklch(0.12 0.03 220) 100%)' }}
+      className="text-white pt-16 pb-8"
+      style={{
+        background: "linear-gradient(135deg, oklch(0.1 0.03 260) 0%, oklch(0.13 0.04 290) 100%)",
+      }}
     >
-      <div className="container py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl gradient-blue-green shadow-glow">
-                <BookOpen className="h-6 w-6 text-white" />
+          <div className="lg:col-span-1">
+            <button onClick={onNavigateHome} className="flex items-center gap-2 mb-4 group">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple))" }}
+              >
+                <BookOpen className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="text-lg font-bold text-white font-display">Akshar Learning Hub</div>
-                <div className="text-xs text-white/50">Phonics-Based Learning</div>
+                <div className="font-poppins font-800 text-base text-white leading-none">Akshar</div>
+                <div className="font-poppins text-xs font-600 leading-none" style={{ color: "var(--neon-cyan)" }}>
+                  Learning Hub
+                </div>
               </div>
-            </div>
-            <p className="text-sm text-white/60 leading-relaxed max-w-xs mb-5">
-              Empowering young readers through phonics. Our structured 8-month program helps children aged 3–10 build strong reading and writing foundations.
+            </button>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Excellence in Education for Grades 1–8. Building academic success, discipline, and confidence in every child.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: <SiFacebook className="h-4 w-4" />, href: '#', label: 'Facebook' },
-                { icon: <SiInstagram className="h-4 w-4" />, href: '#', label: 'Instagram' },
-                { icon: <SiYoutube className="h-4 w-4" />, href: '#', label: 'YouTube' },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white text-sm font-semibold transition-all duration-200 hover:scale-105"
+              style={{ background: "#25D366" }}
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp Us
+            </a>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-white mb-4 font-display">Quick Links</h3>
-            <ul className="space-y-2.5">
-              {navLinks.map((link) => (
-                <li key={link.id}>
+            <h4
+              className="font-poppins font-700 text-sm mb-4 uppercase tracking-wider"
+              style={{ color: "var(--neon-cyan)" }}
+            >
+              Quick Links
+            </h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
                   <button
-                    onClick={() => onNavigate(link.id)}
-                    className="text-sm text-white/60 hover:text-white transition-colors"
+                    onClick={() => scrollTo(link.href)}
+                    className="text-white/60 hover:text-white text-sm transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </button>
@@ -78,41 +98,79 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
+          {/* Programs */}
+          <div>
+            <h4
+              className="font-poppins font-700 text-sm mb-4 uppercase tracking-wider"
+              style={{ color: "var(--neon-pink)" }}
+            >
+              Our Programs
+            </h4>
+            <ul className="space-y-2">
+              {programs.map((p) => (
+                <li key={p} className="text-white/60 text-sm">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
-            <h3 className="font-bold text-white mb-4 font-display">Contact Us</h3>
-            <ul className="space-y-3 text-sm text-white/60">
-              <li>
-                <div className="font-medium text-white/80 mb-0.5">Address</div>
-                42, Shanti Nagar, Bandra West,<br />Mumbai – 400050
-              </li>
-              <li>
-                <div className="font-medium text-white/80 mb-0.5">Phone</div>
-                +91 98765 43210
-              </li>
-              <li>
-                <div className="font-medium text-white/80 mb-0.5">Email</div>
-                hello@aksharlearninghub.in
-              </li>
-            </ul>
+            <h4
+              className="font-poppins font-700 text-sm mb-4 uppercase tracking-wider"
+              style={{ color: "var(--neon-orange)" }}
+            >
+              Contact Us
+            </h4>
+            <div className="space-y-3">
+              <a
+                href="tel:+917718823635"
+                className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors group"
+              >
+                <Phone className="w-4 h-4 shrink-0" style={{ color: "var(--neon-cyan)" }} />
+                +91 77188 23635
+              </a>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
+              >
+                <MessageCircle className="w-4 h-4 shrink-0" style={{ color: "var(--neon-green)" }} />
+                WhatsApp Chat
+              </a>
+              <div className="flex items-start gap-2 text-white/60 text-sm">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--neon-orange)" }} />
+                <span>
+                  Opposite Pratibha College,<br />
+                  Chinchwad, Pune 411019
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <Separator className="my-8 bg-white/10" />
-
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/50">
-          <p>© {currentYear} Akshar Learning Hub. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Built with <Heart className="h-4 w-4 text-secondary fill-secondary" /> using{' '}
-            <a
-              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appIdentifier}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-white/70 hover:text-white transition-colors"
-            >
-              caffeine.ai
-            </a>
-          </p>
+        {/* Divider */}
+        <div className="border-t border-white/10 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-white/40 text-xs text-center sm:text-left">
+              © {new Date().getFullYear()} Akshar Learning Hub. All rights reserved.
+            </p>
+            <p className="text-white/40 text-xs flex items-center gap-1">
+              Built with{" "}
+              <Heart className="w-3 h-3 fill-current" style={{ color: "var(--neon-pink)" }} />{" "}
+              using{" "}
+              <a
+                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname || "akshar-learning-hub")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/70 transition-colors underline"
+              >
+                caffeine.ai
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-redesign-the-overall-app-theme-to-use-a-blue-green-hue-gradient-color-scheme-throughout-the-entire-website-replace-the-current-pastel-palette-with-rich-blue-to-green-gradients-update-tailwind-config-and-global-css-variables-accordingly-apply-a-pixar-hd-style-visual-aesthetic-with-vibrant-illustrated-animated-elements-that-appeal-to-both-kids-and-parents",
-      "featureTitle": "Redesign the overall app theme to use a blue-green hue gradient color scheme throughout the entire website. Replace the current pastel palette with rich blue-to-green gradients. Update Tailwind config and global CSS variables accordingly. Apply a Pixar HD-style visual aesthetic with vibrant, illustrated, animated elements that appeal to both kids and parents.",
+      "featureId": "feature-redesign-the-entire-frontend-with-a-bright-energetic-neon-accented-color-palette-suited-for-grade-1-8-students-use-vibrant-colors-such-as-electric-cyan-neon-yellow-green-hot-pink-and-vivid-orange-as-accents-on-a-clean-white-light-background-use-modern-sans-serif-typography-poppins-nunito-all-icons-must-be-modern-lucide-or-similar-the-design-should-be-minimalistic-yet-energetic-clean-layouts-with-bold-neon-highlights-not-cluttered",
+      "featureTitle": "Redesign the entire frontend with a bright, energetic neon-accented color palette suited for Grade 1–8 students. Use vibrant colors such as electric cyan, neon yellow-green, hot pink, and vivid orange as accents on a clean white/light background. Use modern sans-serif typography (Poppins/Nunito). All icons must be modern (Lucide or similar). The design should be minimalistic yet energetic — clean layouts with bold neon highlights, not cluttered.",
       "files": [
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
@@ -21,8 +21,8 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-rebuild-the-hero-landing-section-with-a-full-width-animated-welcome-area-featuring-the-akshar-learning-hub-branding-a-bold-headline-about-phonics-based-reading-and-writing-a-short-value-proposition-a-prominent-call-to-action-button-e-g-start-learning-and-a-pixar-style-illustrated-hero-image-of-kids-learning-include-scroll-triggered-entrance-animations",
-      "featureTitle": "Rebuild the Hero/Landing section with a full-width animated welcome area featuring the Akshar Learning Hub branding, a bold headline about phonics-based reading and writing, a short value proposition, a prominent call-to-action button (e.g., 'Start Learning'), and a Pixar-style illustrated hero image of kids learning. Include scroll-triggered entrance animations.",
+      "featureId": "feature-build-a-hero-home-section-as-the-landing-area-for-akshar-learning-hub-include-the-firm-name-akshar-learning-hub-a-compelling-tagline-a-brief-intro-about-the-tutoring-services-and-two-cta-buttons-book-free-demo-and-explore-programs-apply-energetic-neon-accented-styling-with-animated-elements",
+      "featureTitle": "Build a Hero/Home section as the landing area for Akshar Learning Hub. Include the firm name 'Akshar Learning Hub', a compelling tagline, a brief intro about the tutoring services, and two CTA buttons: 'Book Free Demo' and 'Explore Programs'. Apply energetic neon-accented styling with animated elements.",
       "files": [
         "frontend/src/components/Hero.tsx"
       ],
@@ -39,10 +39,9 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-an-about-akshar-learning-hub-section-that-describes-the-organization-s-mission-vision-and-approach-to-phonics-based-education-include-animated-infographic-style-elements-pixar-style-illustrations-and-engaging-copy-aimed-at-both-parents-and-kids-highlight-the-unique-teaching-methodology-and-the-importance-of-phonics",
-      "featureTitle": "Create an 'About Akshar Learning Hub' section that describes the organization's mission, vision, and approach to phonics-based education. Include animated infographic-style elements, Pixar-style illustrations, and engaging copy aimed at both parents and kids. Highlight the unique teaching methodology and the importance of phonics.",
+      "featureId": "feature-build-an-about-section-highlighting-akshar-learning-hub-s-positive-learning-environment-emphasize-student-discipline-attention-to-detail-to-avoid-silly-mistakes-life-skills-development-social-growth-and-increased-student-confidence-include-placeholder-testimonial-style-highlights-from-students-and-parents",
+      "featureTitle": "Build an About section highlighting Akshar Learning Hub's positive learning environment. Emphasize: student discipline, attention to detail to avoid silly mistakes, life skills development, social growth, and increased student confidence. Include placeholder testimonial-style highlights from students and parents.",
       "files": [
-        "frontend/src/App.tsx",
         "frontend/src/components/About.tsx"
       ],
       "components": [
@@ -58,11 +57,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-an-8-month-phonics-program-section-that-details-the-full-curriculum-from-beginner-to-advanced-structure-it-as-three-phases-beginner-months-1-3-intermediate-months-4-6-and-advanced-months-7-8-each-phase-should-list-learning-objectives-skills-covered-and-materials-provided-use-animated-progress-style-cards-or-timeline-layout-all-materials-are-provided-by-akshar-learning-hub",
-      "featureTitle": "Create an 8-Month Phonics Program section that details the full curriculum from Beginner to Advanced. Structure it as three phases: Beginner (Months 1–3), Intermediate (Months 4–6), and Advanced (Months 7–8). Each phase should list learning objectives, skills covered, and materials provided. Use animated progress-style cards or timeline layout. All materials are provided by Akshar Learning Hub.",
+      "featureId": "feature-build-individual-service-sections-for-each-of-the-following-akshar-learning-hub-offerings-each-with-its-own-dedicated-section-card-layout-description-target-grade-range-and-a-modern-icon-1-after-school-education-support-tuitions-for-grade-1-8-2-phonics-program-3-maths-coaching-4-special-subject-mentoring-5-scholarship-exam-preparation-for-grade-5-10-each-service-section-must-be-visually-distinct-with-neon-accented-styling",
+      "featureTitle": "Build individual service sections for each of the following Akshar Learning Hub offerings, each with its own dedicated section/card layout, description, target grade range, and a modern icon: (1) After School Education Support (Tuitions) for Grade 1–8, (2) Phonics program, (3) Maths coaching, (4) Special Subject Mentoring, (5) Scholarship & Exam Preparation for Grade 5–10. Each service section must be visually distinct with neon-accented styling.",
       "files": [
         "frontend/src/App.tsx",
-        "frontend/src/components/ProgramOverview.tsx"
+        "frontend/src/components/Services.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -77,15 +76,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-rebuild-the-interactive-phonics-activities-section-to-include-1-an-alphabet-pronunciation-demo-where-every-letter-s-phonetic-sound-follows-strict-phonics-phonetics-rules-not-letter-names-2-a-letter-sound-matching-quiz-and-3-a-word-pronunciation-exercise-where-kids-can-hear-words-spoken-all-activities-must-be-embedded-in-the-main-website-page-as-a-try-it-demo-section-use-kid-friendly-ui-with-pixar-style-character-illustrations-as-decorative-elements",
-      "featureTitle": "Rebuild the interactive phonics activities section to include: (1) an alphabet pronunciation demo where every letter's phonetic sound follows strict phonics/phonetics rules (not letter names), (2) a letter-sound matching quiz, and (3) a word pronunciation exercise where kids can hear words spoken. All activities must be embedded in the main website page as a 'Try It' demo section. Use kid-friendly UI with Pixar-style character illustrations as decorative elements.",
+      "featureId": "feature-build-a-testimonials-results-section-with-placeholder-student-and-parent-success-stories-include-at-least-4-6-placeholder-testimonial-cards-with-names-roles-parent-student-grade-level-and-a-short-positive-quote-use-a-carousel-or-grid-layout",
+      "featureTitle": "Build a Testimonials/Results section with placeholder student and parent success stories. Include at least 4–6 placeholder testimonial cards with names, roles (parent/student), grade level, and a short positive quote. Use a carousel or grid layout.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/PhonicsActivitiesDemo.tsx",
-        "frontend/src/components/activities/LetterSoundMatching.tsx",
-        "frontend/src/components/activities/PronunciationPractice.tsx",
-        "frontend/src/components/activities/SoundRecognition.tsx",
-        "frontend/src/utils/audioHelper.ts"
+        "frontend/src/components/Testimonials.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -100,11 +94,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-learning-strategies-modern-teaching-methods-section-featuring-animated-infographics-include-strategies-such-as-multi-sensory-learning-phonemic-awareness-blending-and-segmenting-sight-word-recognition-and-reading-aloud-present-modern-teaching-methods-like-gamification-spaced-repetition-and-interactive-storytelling-use-scroll-triggered-animations-and-icon-based-visual-cards",
-      "featureTitle": "Create a 'Learning Strategies & Modern Teaching Methods' section featuring animated infographics. Include strategies such as multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Present modern teaching methods like gamification, spaced repetition, and interactive storytelling. Use scroll-triggered animations and icon-based visual cards.",
+      "featureId": "feature-build-a-downloads-section-with-three-categories-1-free-downloads-openly-accessible-worksheets-and-materials-with-a-direct-download-button-2-sign-up-required-downloads-gated-by-email-phone-otp-verification-before-download-is-unlocked-3-paid-downloads-clicking-redirects-the-user-to-a-payment-page-showing-upi-qr-placeholder-include-placeholder-cards-for-future-uploads-with-clear-labels-indicating-the-material-type-e-g-phonics-workbook-maths-worksheet-past-exam-paper",
+      "featureTitle": "Build a Downloads section with three categories: (1) Free Downloads — openly accessible worksheets and materials with a direct download button; (2) Sign-up Required Downloads — gated by email + phone OTP verification before download is unlocked; (3) Paid Downloads — clicking redirects the user to a Payment page showing UPI/QR placeholder. Include placeholder cards for future uploads with clear labels indicating the material type (e.g., Phonics Workbook, Maths Worksheet, Past Exam Paper).",
       "files": [
         "frontend/src/App.tsx",
-        "frontend/src/components/LearningStrategies.tsx"
+        "frontend/src/components/Downloads.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -119,11 +113,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-parent-testimonials-section-with-at-least-4-6-testimonials-written-in-natural-conversational-language-as-if-real-parents-are-speaking-each-testimonial-should-include-a-parent-name-child-s-approximate-age-grade-a-short-story-or-experience-and-a-star-rating-display-them-in-an-animated-carousel-or-card-layout-avoid-formal-or-corporate-language",
-      "featureTitle": "Create a parent testimonials section with at least 4–6 testimonials written in natural, conversational language as if real parents are speaking. Each testimonial should include a parent name, child's approximate age/grade, a short story or experience, and a star rating. Display them in an animated carousel or card layout. Avoid formal or corporate language.",
+      "featureId": "feature-implement-a-simulated-otp-verification-flow-for-sign-up-gated-downloads-when-a-user-clicks-a-gated-download-show-a-modal-asking-for-their-name-email-address-and-phone-number-validate-email-format-and-phone-number-format-10-digit-indian-mobile-on-submission-generate-a-6-digit-otp-display-it-on-screen-simulated-delivery-show-otp-in-the-ui-with-a-note-that-it-would-be-sent-via-sms-in-production-store-the-user-s-email-and-phone-in-the-motoko-backend-and-require-the-user-to-enter-the-otp-to-proceed-on-correct-otp-entry-unlock-the-download",
+      "featureTitle": "Implement a simulated OTP verification flow for sign-up gated downloads. When a user clicks a gated download, show a modal asking for their name, email address, and phone number. Validate email format and phone number format (10-digit Indian mobile). On submission, generate a 6-digit OTP, display it on-screen (simulated delivery — show OTP in the UI with a note that it would be sent via SMS in production), store the user's email and phone in the Motoko backend, and require the user to enter the OTP to proceed. On correct OTP entry, unlock the download.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Testimonials.tsx"
+        "frontend/src/components/Downloads.tsx",
+        "frontend/src/components/OTPModal.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -138,11 +132,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-contact-information-section-at-the-bottom-of-the-website-include-a-contact-form-with-fields-for-name-email-phone-number-child-s-age-and-message-also-display-address-phone-number-email-address-and-social-media-links-as-static-info-style-with-the-blue-green-theme-and-include-a-friendly-pixar-style-illustration-nearby",
-      "featureTitle": "Create a Contact Information section at the bottom of the website. Include a contact form with fields for Name, Email, Phone Number, Child's Age, and Message. Also display address, phone number, email address, and social media links as static info. Style with the blue-green theme and include a friendly Pixar-style illustration nearby.",
+      "featureId": "feature-build-a-payment-page-section-for-paid-worksheet-purchases-this-page-should-display-a-placeholder-upi-qr-code-image-with-a-note-to-replace-it-a-placeholder-upi-id-field-e-g-yourname-upi-and-instructions-to-complete-payment-and-contact-via-whatsapp-to-receive-the-material-include-a-whatsapp-link-for-post-payment-confirmation",
+      "featureTitle": "Build a Payment page/section for paid worksheet purchases. This page should display a placeholder UPI QR code image (with a note to replace it), a placeholder UPI ID field (e.g., 'yourname@upi'), and instructions to complete payment and contact via WhatsApp to receive the material. Include a WhatsApp link for post-payment confirmation.",
       "files": [
         "frontend/src/App.tsx",
-        "frontend/src/components/Contact.tsx"
+        "frontend/src/components/Payment.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -157,10 +151,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-rebuild-the-site-navigation-header-to-reflect-all-new-sections-of-the-akshar-learning-hub-website-home-about-programs-activities-learning-strategies-testimonials-and-contact-make-it-sticky-with-a-smooth-scroll-behavior-to-each-section-use-the-akshar-learning-hub-logo-name-in-the-header-include-a-mobile-responsive-hamburger-menu",
-      "featureTitle": "Rebuild the site navigation header to reflect all new sections of the Akshar Learning Hub website: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Make it sticky with a smooth scroll behavior to each section. Use the Akshar Learning Hub logo/name in the header. Include a mobile-responsive hamburger menu.",
+      "featureId": "feature-build-a-contact-section-with-the-following-details-phone-number-7718823635-clickable-tel-link-a-direct-whatsapp-link-pre-filled-with-an-inquiry-message-to-7718823635-and-the-address-opposite-pratibha-college-chinchwad-pune-411019-do-not-include-an-email-address-the-section-should-use-modern-card-icon-layout-with-neon-accents",
+      "featureTitle": "Build a Contact section with the following details: Phone number 7718823635 (clickable tel: link), a direct WhatsApp link pre-filled with an inquiry message to 7718823635, and the address: Opposite Pratibha College, Chinchwad, Pune 411019. Do NOT include an email address. The section should use modern card/icon layout with neon accents.",
       "files": [
-        "frontend/src/components/Header.tsx"
+        "frontend/src/components/Contact.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -175,8 +169,44 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-rebuild-the-footer-to-reflect-akshar-learning-hub-branding-with-quick-navigation-links-contact-details-a-brief-tagline-about-phonics-education-and-copyright-information-for-akshar-learning-hub",
-      "featureTitle": "Rebuild the Footer to reflect Akshar Learning Hub branding, with quick navigation links, contact details, a brief tagline about phonics education, and copyright information for Akshar Learning Hub.",
+      "featureId": "feature-build-a-fixed-floating-whatsapp-button-visible-on-all-pages-sections-linking-to-wa-me-917718823635-with-a-pre-filled-inquiry-message-for-akshar-learning-hub",
+      "featureTitle": "Build a fixed floating WhatsApp button visible on all pages/sections, linking to wa.me/917718823635 with a pre-filled inquiry message for Akshar Learning Hub.",
+      "files": [
+        "frontend/src/components/WhatsAppButton.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-responsive-fixed-navigation-header-with-the-akshar-learning-hub-logo-name-nav-links-to-all-sections-home-about-services-downloads-contact-an-enroll-now-cta-button-with-neon-accent-styling-and-a-mobile-hamburger-menu",
+      "featureTitle": "Build a responsive fixed navigation header with the Akshar Learning Hub logo/name, nav links to all sections (Home, About, Services, Downloads, Contact), an 'Enroll Now' CTA button with neon accent styling, and a mobile hamburger menu.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-site-footer-with-akshar-learning-hub-branding-quick-navigation-links-a-list-of-programs-services-and-contact-info-phone-and-address-only-no-email-include-the-whatsapp-link",
+      "featureTitle": "Build a site Footer with Akshar Learning Hub branding, quick navigation links, a list of programs/services, and contact info (phone and address only, no email). Include the WhatsApp link.",
       "files": [
         "frontend/src/components/Footer.tsx"
       ],
@@ -188,7 +218,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-10"
+        "REQ-12"
       ],
       "confidence": "high"
     }

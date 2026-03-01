@@ -1,13 +1,15 @@
-import { forwardRef, useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Sparkles, BookOpen, Star, ArrowRight, GraduationCap } from 'lucide-react';
-import { generatedImages } from '@/assets/generatedImages';
+import { useEffect, useState } from "react";
+import { ArrowRight, Star, Users, Award, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-interface HeroProps {
-  onStartLearning: () => void;
-}
+const stats = [
+  { icon: Users, value: "200+", label: "Happy Students" },
+  { icon: Star, value: "4.9★", label: "Parent Rating" },
+  { icon: Award, value: "95%", label: "Exam Success" },
+  { icon: BookOpen, value: "6+", label: "Programs" },
+];
 
-export const Hero = forwardRef<HTMLElement, HeroProps>(({ onStartLearning }, ref) => {
+export default function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -15,129 +17,164 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ onStartLearning }, ref
     return () => clearTimeout(timer);
   }, []);
 
-  const stats = [
-    { icon: <GraduationCap className="h-5 w-5" />, value: '500+', label: 'Happy Learners' },
-    { icon: <Star className="h-5 w-5" />, value: '8 Months', label: 'Structured Program' },
-    { icon: <BookOpen className="h-5 w-5" />, value: '100%', label: 'Materials Provided' },
-  ];
+  const scrollTo = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
-      ref={ref}
       id="home"
-      className="relative overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20"
       style={{
-        background: 'linear-gradient(160deg, oklch(0.94 0.04 230) 0%, oklch(0.96 0.03 185) 50%, oklch(0.94 0.04 155) 100%)',
+        background:
+          "linear-gradient(135deg, oklch(0.97 0.02 260) 0%, oklch(0.99 0.01 200) 40%, oklch(0.97 0.02 320) 100%)",
       }}
     >
       {/* Decorative blobs */}
-      <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-20 blur-3xl"
-        style={{ background: 'oklch(0.62 0.18 240)' }} />
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-20 blur-3xl"
-        style={{ background: 'oklch(0.58 0.16 175)' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'oklch(0.72 0.14 185)' }} />
+      <div
+        className="absolute top-20 right-10 w-72 h-72 rounded-full opacity-20 blur-3xl pointer-events-none"
+        style={{ background: "var(--neon-cyan)" }}
+      />
+      <div
+        className="absolute bottom-20 left-10 w-64 h-64 rounded-full opacity-15 blur-3xl pointer-events-none"
+        style={{ background: "var(--neon-pink)" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
+        style={{ background: "var(--neon-yellow)" }}
+      />
 
-      <div className="container relative py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Text Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <div
-            className={`flex flex-col gap-6 text-center lg:text-left transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`transition-all duration-700 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 self-center lg:self-start rounded-full px-5 py-2.5 text-sm font-semibold border"
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 border-2"
               style={{
-                background: 'oklch(0.96 0.04 230 / 0.8)',
-                borderColor: 'oklch(0.62 0.18 240 / 0.3)',
-                color: 'oklch(0.42 0.18 240)',
+                borderColor: "var(--neon-cyan)",
+                color: "var(--neon-cyan)",
+                background: "oklch(0.78 0.2 195 / 0.08)",
               }}
             >
-              <Sparkles className="h-4 w-4" />
-              India's Premier Phonics Learning Program
+              <Star className="w-4 h-4 fill-current" />
+              Trusted by 200+ Families in Pune
             </div>
 
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl font-display leading-tight">
-              Where Every Child
-              <span className="block gradient-text mt-1">Learns to Read</span>
-              <span className="block text-foreground">& Write with Joy!</span>
-            </h1>
-
-            <p className="text-lg text-muted-foreground md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              At <strong className="text-foreground">Akshar Learning Hub</strong>, we use proven phonics methods to help children aged 3–10 build strong reading and writing foundations — one sound at a time.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                onClick={onStartLearning}
-                className="rounded-2xl text-base h-13 px-8 font-bold gradient-blue-green text-white border-0 shadow-glow hover:opacity-90 transition-all hover:scale-105"
-              >
-                Try Free Activities
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-2xl text-base h-13 px-8 font-bold border-2 hover:bg-primary/5"
-                style={{ borderColor: 'oklch(0.62 0.18 240 / 0.4)' }}
-                onClick={() => {
-                  document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' });
+            <h1 className="font-poppins font-900 text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground mb-4">
+              Akshar{" "}
+              <span
+                className="relative inline-block"
+                style={{
+                  background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple))",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}
               >
-                View Programs
+                Learning
+              </span>{" "}
+              Hub
+            </h1>
+
+            <p className="font-poppins font-700 text-xl sm:text-2xl text-foreground/70 mb-4">
+              Excellence in Education for Grades 1–8
+            </p>
+
+            <p className="text-base sm:text-lg text-foreground/60 mb-8 leading-relaxed max-w-lg">
+              We nurture young minds with personalized tutoring, phonics, maths coaching, and exam preparation — building not just academic excellence but discipline, confidence, and life skills.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mb-10">
+              <Button
+                onClick={() => scrollTo("#contact")}
+                size="lg"
+                className="font-poppins font-semibold text-base px-7 py-3 rounded-2xl text-white transition-all duration-200 hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple))",
+                  boxShadow: "0 6px 24px var(--neon-cyan-glow)",
+                }}
+              >
+                Book Free Demo
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                onClick={() => scrollTo("#services")}
+                size="lg"
+                variant="outline"
+                className="font-poppins font-semibold text-base px-7 py-3 rounded-2xl border-2 transition-all duration-200 hover:scale-105"
+                style={{
+                  borderColor: "var(--neon-pink)",
+                  color: "var(--neon-pink)",
+                }}
+              >
+                Explore Programs
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-6 justify-center lg:justify-start flex-wrap mt-2">
-              {stats.map((stat, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl gradient-blue-green text-white">
-                    {stat.icon}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-foreground">{stat.value}</div>
-                    <div className="text-xs text-muted-foreground">{stat.label}</div>
-                  </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center shadow-card border border-border"
+                >
+                  <stat.icon className="w-5 h-5 mx-auto mb-1" style={{ color: "var(--neon-cyan)" }} />
+                  <div className="font-poppins font-800 text-lg text-foreground">{stat.value}</div>
+                  <div className="text-xs text-foreground/50 font-semibold">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Right Image */}
           <div
             className={`relative transition-all duration-700 delay-200 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="absolute -inset-6 rounded-4xl blur-3xl opacity-30"
-              style={{ background: 'linear-gradient(135deg, oklch(0.62 0.18 240), oklch(0.58 0.16 175))' }} />
-            <img
-              src={generatedImages.heroKidsReading}
-              alt="Happy children learning phonics at Akshar Learning Hub"
-              className="relative rounded-3xl shadow-2xl w-full h-auto animate-float"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = generatedImages.kidsReadingBooks;
-              }}
-            />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl float-animation">
+              <img
+                src="/assets/generated/akshar-hero.dim_1440x900.png"
+                alt="Students learning at Akshar Learning Hub"
+                className="w-full h-auto object-cover rounded-3xl"
+                style={{ maxHeight: "480px", objectFit: "cover" }}
+              />
+              <div
+                className="absolute inset-0 rounded-3xl"
+                style={{
+                  background: "linear-gradient(to top, oklch(0.15 0.02 260 / 0.3), transparent)",
+                }}
+              />
+            </div>
+
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-glow px-4 py-3 flex items-center gap-2 border border-border">
-              <div className="flex">
-                {['🌟', '📚', '✏️'].map((emoji, i) => (
-                  <span key={i} className="text-xl">{emoji}</span>
-                ))}
+            <div
+              className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-card-hover border-2"
+              style={{ borderColor: "var(--neon-green)" }}
+            >
+              <div className="font-poppins font-800 text-lg" style={{ color: "var(--neon-green)" }}>
+                🎓 Grade 1–10
               </div>
-              <div>
-                <div className="text-xs font-bold text-foreground">Phonics-Based</div>
-                <div className="text-xs text-muted-foreground">Proven Method</div>
+              <div className="text-xs text-foreground/60 font-semibold">All Programs Available</div>
+            </div>
+
+            <div
+              className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-card-hover border-2"
+              style={{ borderColor: "var(--neon-pink)" }}
+            >
+              <div className="font-poppins font-800 text-base" style={{ color: "var(--neon-pink)" }}>
+                📍 Chinchwad, Pune
               </div>
+              <div className="text-xs text-foreground/60 font-semibold">Opp. Pratibha College</div>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-});
-
-Hero.displayName = 'Hero';
+}

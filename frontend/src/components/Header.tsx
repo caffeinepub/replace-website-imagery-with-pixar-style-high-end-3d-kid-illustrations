@@ -1,115 +1,137 @@
-import { useState, useEffect } from 'react';
-import { BookOpen, Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Menu, X, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
-  onNavigate: (section: string) => void;
+  onNavigateHome: () => void;
 }
 
 const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'programs', label: 'Programs' },
-  { id: 'activities', label: 'Activities' },
-  { id: 'strategies', label: 'Learning Tips' },
-  { id: 'testimonials', label: 'Testimonials' },
-  { id: 'contact', label: 'Contact' },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Downloads", href: "#downloads" },
+  { label: "Contact", href: "#contact" },
 ];
 
-export function Header({ onNavigate }: HeaderProps) {
+export default function Header({ onNavigateHome }: HeaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNav = (id: string) => {
-    onNavigate(id);
+  const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    if (window.location.hash === "#payment") {
+      onNavigateHome();
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-glow border-b border-border'
-          : 'bg-white/80 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-card"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container flex h-18 items-center justify-between py-3">
-        {/* Logo */}
-        <button
-          onClick={() => handleNav('home')}
-          className="flex items-center gap-3 transition-transform hover:scale-105"
-        >
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl gradient-blue-green shadow-glow">
-            <BookOpen className="h-6 w-6 text-white" />
-          </div>
-          <div className="text-left">
-            <span className="block text-lg font-bold tracking-tight font-display gradient-text leading-tight">
-              Akshar Learning Hub
-            </span>
-            <span className="block text-xs text-muted-foreground font-medium">
-              Phonics-Based Learning
-            </span>
-          </div>
-        </button>
-
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleNav(link.id)}
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-foreground/80 hover:text-primary hover:bg-primary/8 transition-all duration-200"
-            >
-              {link.label}
-            </button>
-          ))}
-        </nav>
-
-        {/* CTA + Mobile Toggle */}
-        <div className="flex items-center gap-3">
-          <Button
-            onClick={() => handleNav('contact')}
-            className="hidden sm:flex gradient-blue-green text-white border-0 rounded-xl font-semibold shadow-glow hover:opacity-90 transition-opacity"
-            size="sm"
-          >
-            Enroll Now
-          </Button>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
           <button
-            className="lg:hidden p-2 rounded-xl hover:bg-muted transition-colors"
+            onClick={onNavigateHome}
+            className="flex items-center gap-2 group"
+          >
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-[var(--neon-cyan)] to-[var(--neon-purple)] shadow-md">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-poppins font-800 text-base text-foreground leading-none">
+                Akshar
+              </span>
+              <span className="font-poppins text-xs font-600 text-[var(--neon-cyan)] leading-none">
+                Learning Hub
+              </span>
+            </div>
+          </button>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.href)}
+                className="px-4 py-2 text-sm font-semibold text-foreground/70 hover:text-foreground rounded-lg hover:bg-muted transition-all duration-200 relative group"
+              >
+                {link.label}
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-[var(--neon-cyan)] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 rounded-full" />
+              </button>
+            ))}
+          </nav>
+
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <Button
+              onClick={() => handleNavClick("#contact")}
+              className="font-poppins font-semibold text-sm px-5 py-2 rounded-xl text-white"
+              style={{
+                background: "linear-gradient(135deg, var(--neon-pink), var(--neon-purple))",
+                boxShadow: "0 4px 15px var(--neon-pink-glow)",
+              }}
+            >
+              Enroll Now
+            </Button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="w-5 h-5 text-foreground" />
+            ) : (
+              <Menu className="w-5 h-5 text-foreground" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-white/98 backdrop-blur-md">
-          <nav className="container py-4 flex flex-col gap-1">
+        <div className="md:hidden bg-white/98 backdrop-blur-md border-t border-border shadow-lg">
+          <div className="px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <button
-                key={link.id}
-                onClick={() => handleNav(link.id)}
-                className="w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-foreground/80 hover:text-primary hover:bg-primary/8 transition-all"
+                key={link.label}
+                onClick={() => handleNavClick(link.href)}
+                className="text-left px-4 py-3 text-sm font-semibold text-foreground/80 hover:text-foreground hover:bg-muted rounded-lg transition-colors"
               >
                 {link.label}
               </button>
             ))}
             <Button
-              onClick={() => handleNav('contact')}
-              className="mt-2 gradient-blue-green text-white border-0 rounded-xl font-semibold"
+              onClick={() => handleNavClick("#contact")}
+              className="mt-2 font-poppins font-semibold text-sm rounded-xl text-white"
+              style={{
+                background: "linear-gradient(135deg, var(--neon-pink), var(--neon-purple))",
+              }}
             >
               Enroll Now
             </Button>
-          </nav>
+          </div>
         </div>
       )}
     </header>

@@ -1,53 +1,68 @@
-import { useRef } from 'react';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { ProgramOverview } from './components/ProgramOverview';
-import { PhonicsActivitiesDemo } from './components/PhonicsActivitiesDemo';
-import { LearningStrategies } from './components/LearningStrategies';
-import { Testimonials } from './components/Testimonials';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import { Toaster } from "@/components/ui/sonner";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import Downloads from "./components/Downloads";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
+import Payment from "./components/Payment";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
+
+const queryClient = new QueryClient();
 
 function App() {
-  const heroRef = useRef<HTMLElement>(null);
-  const aboutRef = useRef<HTMLElement>(null);
-  const programsRef = useRef<HTMLElement>(null);
-  const activitiesRef = useRef<HTMLElement>(null);
-  const strategiesRef = useRef<HTMLElement>(null);
-  const testimonialsRef = useRef<HTMLElement>(null);
-  const contactRef = useRef<HTMLElement>(null);
+  const [currentPage, setCurrentPage] = useState<"home" | "payment">("home");
 
-  const scrollToSection = (section: string) => {
-    const refs: Record<string, React.RefObject<HTMLElement | null>> = {
-      home: heroRef,
-      about: aboutRef,
-      programs: programsRef,
-      activities: activitiesRef,
-      strategies: strategiesRef,
-      testimonials: testimonialsRef,
-      contact: contactRef,
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === "#payment") {
+        setCurrentPage("payment");
+      } else {
+        setCurrentPage("home");
+      }
     };
-    const ref = refs[section];
-    if (ref?.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const navigateToPayment = () => {
+    window.location.hash = "#payment";
+    setCurrentPage("payment");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navigateHome = () => {
+    window.location.hash = "";
+    setCurrentPage("home");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header onNavigate={scrollToSection} />
-      <main>
-        <Hero ref={heroRef} onStartLearning={() => scrollToSection('activities')} />
-        <About ref={aboutRef} />
-        <ProgramOverview ref={programsRef} />
-        <PhonicsActivitiesDemo ref={activitiesRef} />
-        <LearningStrategies ref={strategiesRef} />
-        <Testimonials ref={testimonialsRef} />
-        <Contact ref={contactRef} />
-      </main>
-      <Footer onNavigate={scrollToSection} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="min-h-screen bg-background font-nunito">
+        <Header onNavigateHome={navigateHome} />
+        {currentPage === "payment" ? (
+          <Payment onBack={navigateHome} />
+        ) : (
+          <main>
+            <Hero />
+            <About />
+            <Services />
+            <Testimonials />
+            <Downloads onNavigateToPayment={navigateToPayment} />
+            <Contact />
+          </main>
+        )}
+        <Footer onNavigateHome={navigateHome} />
+        <WhatsAppButton />
+        <Toaster richColors position="top-right" />
+      </div>
+    </QueryClientProvider>
   );
 }
 

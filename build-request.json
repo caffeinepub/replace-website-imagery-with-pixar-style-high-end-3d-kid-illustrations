@@ -1,225 +1,251 @@
 {
   "kind": "build_request",
-  "title": "Build Akshar Learning Hub Full Website",
+  "title": "Build Akshar Learning Hub Website from Scratch",
   "projectName": "Akshar Learning Hub",
   "priority": "high",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Redesign the overall app theme to use a blue-green hue gradient color scheme throughout the entire website. Replace the current pastel palette with rich blue-to-green gradients. Update Tailwind config and global CSS variables accordingly. Apply a Pixar HD-style visual aesthetic with vibrant, illustrated, animated elements that appeal to both kids and parents.",
+      "text": "Redesign the entire frontend with a bright, energetic neon-accented color palette suited for Grade 1–8 students. Use vibrant colors such as electric cyan, neon yellow-green, hot pink, and vivid orange as accents on a clean white/light background. Use modern sans-serif typography (Poppins/Nunito). All icons must be modern (Lucide or similar). The design should be minimalistic yet energetic — clean layouts with bold neon highlights, not cluttered.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
+          "msg-12"
         ],
         "quotes": [
-          "The color theme must be focused on blue and green which must be in hue effect",
-          "Interactive elements must focus on informational animations in Pixar HD style"
+          "brighter and energetic with some neon in it. Must suit grade 1st to 8th"
         ]
       },
       "acceptanceCriteria": [
-        "Blue-to-green gradient palette is applied consistently across all sections",
-        "Tailwind config and CSS variables reflect the new blue-green hue theme",
-        "Visual style is vibrant and Pixar-inspired throughout"
+        "Neon accent colors are visibly present across sections (buttons, highlights, badges, borders)",
+        "Overall layout remains clean and minimalistic",
+        "Typography uses Poppins and/or Nunito",
+        "Icons are modern and consistent throughout"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Rebuild the Hero/Landing section with a full-width animated welcome area featuring the Akshar Learning Hub branding, a bold headline about phonics-based reading and writing, a short value proposition, a prominent call-to-action button (e.g., 'Start Learning'), and a Pixar-style illustrated hero image of kids learning. Include scroll-triggered entrance animations.",
+      "text": "Build a Hero/Home section as the landing area for Akshar Learning Hub. Include the firm name 'Akshar Learning Hub', a compelling tagline, a brief intro about the tutoring services, and two CTA buttons: 'Book Free Demo' and 'Explore Programs'. Apply energetic neon-accented styling with animated elements.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Hero/Landing with animated welcome"
+          "msg-11",
+          "msg-14"
         ]
       },
       "acceptanceCriteria": [
-        "Hero section displays Akshar Learning Hub name and tagline prominently",
-        "Call-to-action button is visible and styled in brand colors",
-        "Hero image uses the Pixar-style generated asset",
-        "Entrance animations trigger on page load"
+        "Hero section displays firm name 'Akshar Learning Hub' prominently",
+        "Tagline and brief description are present",
+        "'Book Free Demo' and 'Explore Programs' CTA buttons are visible",
+        "Section uses neon-accented design with animations"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Create an 'About Akshar Learning Hub' section that describes the organization's mission, vision, and approach to phonics-based education. Include animated infographic-style elements, Pixar-style illustrations, and engaging copy aimed at both parents and kids. Highlight the unique teaching methodology and the importance of phonics.",
+      "text": "Build an About section highlighting Akshar Learning Hub's positive learning environment. Emphasize: student discipline, attention to detail to avoid silly mistakes, life skills development, social growth, and increased student confidence. Include placeholder testimonial-style highlights from students and parents.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "About Akshar Learning Hub"
+          "msg-11"
         ]
       },
       "acceptanceCriteria": [
-        "About section is present with mission and vision content",
-        "Section includes at least one illustrated/animated element",
-        "Content addresses both parent and child audiences"
+        "About section covers discipline, life skills, confidence, social growth",
+        "Positive environment messaging is clearly communicated",
+        "Section uses modern card or highlight layouts"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Create an 8-Month Phonics Program section that details the full curriculum from Beginner to Advanced. Structure it as three phases: Beginner (Months 1–3), Intermediate (Months 4–6), and Advanced (Months 7–8). Each phase should list learning objectives, skills covered, and materials provided. Use animated progress-style cards or timeline layout. All materials are provided by Akshar Learning Hub.",
+      "text": "Build individual service sections for each of the following Akshar Learning Hub offerings, each with its own dedicated section/card layout, description, target grade range, and a modern icon: (1) After School Education Support (Tuitions) for Grade 1–8, (2) Phonics program, (3) Maths coaching, (4) Special Subject Mentoring, (5) Scholarship & Exam Preparation for Grade 5–10. Each service section must be visually distinct with neon-accented styling.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "8-Month Phonics Program (Beginner → Intermediate → Advanced) with full curriculum details",
-          "all material provided by us"
+          "msg-11"
         ]
       },
       "acceptanceCriteria": [
-        "Three program phases (Beginner, Intermediate, Advanced) are displayed",
-        "Each phase lists learning goals and included materials",
-        "Timeline or card layout is animated and visually appealing",
-        "Mention that all materials are provided by Akshar Learning Hub"
+        "Five separate service cards/sections are rendered",
+        "Each service has a title, description, grade range, and modern icon",
+        "Scholarship & Exam Prep clearly targets Grade 5–10",
+        "Phonics and Maths are listed as standalone services"
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Rebuild the interactive phonics activities section to include: (1) an alphabet pronunciation demo where every letter's phonetic sound follows strict phonics/phonetics rules (not letter names), (2) a letter-sound matching quiz, and (3) a word pronunciation exercise where kids can hear words spoken. All activities must be embedded in the main website page as a 'Try It' demo section. Use kid-friendly UI with Pixar-style character illustrations as decorative elements.",
+      "text": "Build a Testimonials/Results section with placeholder student and parent success stories. Include at least 4–6 placeholder testimonial cards with names, roles (parent/student), grade level, and a short positive quote. Use a carousel or grid layout.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Interactive Phonics Activity — alphabet pronunciation demo (phonetics-based), letter-sound quiz, and word pronunciation demos",
-          "All alphabet sounds strictly per phonics/phonetics rules",
-          "Kid-friendly UI alongside parent-focused informational content"
+          "msg-11"
         ]
       },
       "acceptanceCriteria": [
-        "All 26 letter sounds use phonics pronunciation (e.g., 'a' as in 'apple', not 'ay')",
-        "Letter-sound matching quiz is functional with score tracking",
-        "Word pronunciation cards allow kids to hear words spoken",
-        "Activities section is clearly labeled as a demo/try-it area"
+        "At least 4 placeholder testimonial cards are shown",
+        "Each card has a name, role (parent or student), and quote",
+        "Layout is carousel or responsive grid"
       ]
     },
     {
       "id": "REQ-6",
-      "text": "Create a 'Learning Strategies & Modern Teaching Methods' section featuring animated infographics. Include strategies such as multi-sensory learning, phonemic awareness, blending and segmenting, sight word recognition, and reading aloud. Present modern teaching methods like gamification, spaced repetition, and interactive storytelling. Use scroll-triggered animations and icon-based visual cards.",
+      "text": "Build a Downloads section with three categories: (1) Free Downloads — openly accessible worksheets and materials with a direct download button; (2) Sign-up Required Downloads — gated by email + phone OTP verification before download is unlocked; (3) Paid Downloads — clicking redirects the user to a Payment page showing UPI/QR placeholder. Include placeholder cards for future uploads with clear labels indicating the material type (e.g., Phonics Workbook, Maths Worksheet, Past Exam Paper).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Learning Strategies & Modern Teaching Methods (with animated infographics)",
-          "modern learning methods"
+          "msg-12",
+          "msg-13"
         ]
       },
       "acceptanceCriteria": [
-        "At least 5 learning strategies are presented with icons or illustrations",
-        "At least 3 modern teaching methods are highlighted",
-        "Section uses scroll-triggered animations",
-        "Content is informative and accessible to parents"
+        "Three clearly labelled download categories are present: Free, Sign-up Required, Paid",
+        "Free download buttons work directly",
+        "Sign-up required downloads trigger the OTP modal before unlocking",
+        "Paid download buttons navigate to the Payment page",
+        "Placeholder cards for future uploads are visible with labels"
       ]
     },
     {
       "id": "REQ-7",
-      "text": "Create a parent testimonials section with at least 4–6 testimonials written in natural, conversational language as if real parents are speaking. Each testimonial should include a parent name, child's approximate age/grade, a short story or experience, and a star rating. Display them in an animated carousel or card layout. Avoid formal or corporate language.",
-      "target": "frontend",
+      "text": "Implement a simulated OTP verification flow for sign-up gated downloads. When a user clicks a gated download, show a modal asking for their name, email address, and phone number. Validate email format and phone number format (10-digit Indian mobile). On submission, generate a 6-digit OTP, display it on-screen (simulated delivery — show OTP in the UI with a note that it would be sent via SMS in production), store the user's email and phone in the Motoko backend, and require the user to enter the OTP to proceed. On correct OTP entry, unlock the download.",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Testimonials in natural, conversational language from parents",
-          "genuine way and natural language in conversational way"
+          "msg-12",
+          "msg-13",
+          "msg-14"
         ]
       },
       "acceptanceCriteria": [
-        "At least 4 testimonials are present",
-        "Language is conversational and natural, not corporate",
-        "Each testimonial includes parent name, child info, and star rating",
-        "Displayed in an animated carousel or scrollable card layout"
+        "Modal collects name, email, and phone",
+        "Email format and 10-digit phone validation are enforced",
+        "A 6-digit OTP is generated and displayed on-screen after form submission",
+        "OTP entry field appears after submission",
+        "Correct OTP unlocks the download; incorrect OTP shows an error",
+        "User's email and phone are stored in the Motoko backend actor",
+        "UI clearly states OTP is simulated"
       ]
     },
     {
       "id": "REQ-8",
-      "text": "Create a Contact Information section at the bottom of the website. Include a contact form with fields for Name, Email, Phone Number, Child's Age, and Message. Also display address, phone number, email address, and social media links as static info. Style with the blue-green theme and include a friendly Pixar-style illustration nearby.",
+      "text": "Build a Payment page/section for paid worksheet purchases. This page should display a placeholder UPI QR code image (with a note to replace it), a placeholder UPI ID field (e.g., 'yourname@upi'), and instructions to complete payment and contact via WhatsApp to receive the material. Include a WhatsApp link for post-payment confirmation.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Contact Information section"
+          "msg-13"
         ]
       },
       "acceptanceCriteria": [
-        "Contact form includes Name, Email, Phone, Child's Age, and Message fields",
-        "Static contact details (address, phone, email) are displayed",
-        "Form has basic client-side validation",
-        "Section is styled consistently with the blue-green brand theme"
+        "Payment page shows a placeholder QR code image",
+        "Placeholder UPI ID is displayed with an edit note",
+        "Payment instructions are clearly written",
+        "WhatsApp link for post-payment contact is present"
       ]
     },
     {
       "id": "REQ-9",
-      "text": "Rebuild the site navigation header to reflect all new sections of the Akshar Learning Hub website: Home, About, Programs, Activities, Learning Strategies, Testimonials, and Contact. Make it sticky with a smooth scroll behavior to each section. Use the Akshar Learning Hub logo/name in the header. Include a mobile-responsive hamburger menu.",
+      "text": "Build a Contact section with the following details: Phone number 7718823635 (clickable tel: link), a direct WhatsApp link pre-filled with an inquiry message to 7718823635, and the address: Opposite Pratibha College, Chinchwad, Pune 411019. Do NOT include an email address. The section should use modern card/icon layout with neon accents.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Must include all like Hero landing section, about Akshar learning hub, phonics program"
+          "msg-12"
         ]
       },
       "acceptanceCriteria": [
-        "Navigation includes links to all major sections",
-        "Smooth scroll behavior works for all navigation links",
-        "Header is sticky and collapses to hamburger on mobile",
-        "Akshar Learning Hub branding is displayed in the header"
+        "Phone number 7718823635 is displayed and clickable (tel: link)",
+        "WhatsApp button links to wa.me/917718823635 with a pre-filled message",
+        "Address 'Opposite Pratibha College, Chinchwad, Pune 411019' is shown",
+        "No email address is displayed",
+        "Section uses modern icon and card layout"
       ]
     },
     {
       "id": "REQ-10",
-      "text": "Rebuild the Footer to reflect Akshar Learning Hub branding, with quick navigation links, contact details, a brief tagline about phonics education, and copyright information for Akshar Learning Hub.",
+      "text": "Build a fixed floating WhatsApp button visible on all pages/sections, linking to wa.me/917718823635 with a pre-filled inquiry message for Akshar Learning Hub.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-18"
-        ],
-        "quotes": [
-          "Akshar Learning Hub"
+          "msg-12"
         ]
       },
       "acceptanceCriteria": [
-        "Footer displays Akshar Learning Hub name and tagline",
-        "Quick links to all major sections are included",
-        "Contact info is shown in the footer",
-        "Copyright text references Akshar Learning Hub"
+        "Floating WhatsApp button is always visible on screen",
+        "Clicking opens WhatsApp with the correct number and a pre-filled message",
+        "Button does not obstruct main content significantly"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build a responsive fixed navigation header with the Akshar Learning Hub logo/name, nav links to all sections (Home, About, Services, Downloads, Contact), an 'Enroll Now' CTA button with neon accent styling, and a mobile hamburger menu.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-11"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header is fixed at the top on scroll",
+        "Nav links scroll smoothly to each section",
+        "'Enroll Now' button is prominently styled with neon accent",
+        "Mobile hamburger menu works on small screens"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Build a site Footer with Akshar Learning Hub branding, quick navigation links, a list of programs/services, and contact info (phone and address only, no email). Include the WhatsApp link.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-11"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays firm name and tagline",
+        "Quick nav links are present",
+        "All services are listed",
+        "Phone and address are shown; no email",
+        "WhatsApp link is included"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Implement the Motoko backend actor to store user sign-up data (name, email, phone number) submitted during the OTP gated download flow. Expose functions: registerUser(name: Text, email: Text, phone: Text) : async Text (returns generated OTP), verifyOTP(email: Text, otp: Text) : async Bool (validates OTP), and getUsers() : async [User] (admin query). Store records in a stable var array or HashMap.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-13",
+          "msg-14"
+        ]
+      },
+      "acceptanceCriteria": [
+        "registerUser stores the user and returns a 6-digit OTP string",
+        "verifyOTP returns true for correct OTP, false otherwise",
+        "User data (name, email, phone) persists in stable storage",
+        "No real SMS is sent — OTP is returned from the function for display"
       ]
     }
   ],
   "constraints": [
-    "All alphabet pronunciation audio must strictly follow phonics/phonetic rules — use phonetic sounds (e.g., /æ/ for 'a'), not letter names",
-    "Do not change immutable frontend paths: useInternetIdentity, useActor, main.tsx, or UI components",
-    "Color theme must use blue and green hue gradients — do not revert to pastel palette",
-    "All interactive activities must work without any backend — use frontend-only state"
+    "Do NOT include email address anywhere on the website",
+    "OTP delivery must be simulated (displayed on-screen) — no real SMS/email integration",
+    "Paid worksheet flow must redirect to a UPI/QR payment placeholder page — no real payment gateway",
+    "All backend logic must remain in a single Motoko actor (backend/main.mo)",
+    "Do not edit files under frontend/src/hooks/ or frontend/src/components/ui"
   ],
   "nonGoals": [
-    "User authentication or login functionality",
-    "Backend data persistence for contact form submissions",
-    "Real-time features or chat",
-    "External API integrations",
-    "A separate dedicated children's app or gamified platform beyond the demo activities"
+    "Real SMS or email OTP delivery",
+    "Real payment processing or Stripe integration",
+    "Internet Identity / login authentication",
+    "Actual file upload/management system for worksheets",
+    "Google Maps or location embedding",
+    "Blog or CMS functionality"
   ],
   "imageRequirements": {
     "required": [
-      "Pixar HD-style illustration of diverse happy children sitting together reading colorful books in a bright classroom (hero-kids-reading.dim_1400x700.png)",
-      "Pixar HD-style illustration of a friendly smiling teacher with children around a whiteboard showing letters and phonics symbols (about-teacher-kids.dim_900x600.png)",
-      "Pixar HD-style illustration of a child progressing through levels with stars and a trophy, showing learning journey (program-journey.dim_900x500.png)",
-      "Pixar HD-style illustration of a cute animated owl or animal mascot holding a letter card, representing phonics learning (mascot-phonics.dim_400x400.png)",
-      "Pixar HD-style illustration of parents smiling and watching their child read confidently (testimonials-parents.dim_800x500.png)",
-      "Pixar HD-style bright colorful illustration of the alphabet with associated animals or objects in phonics style (alphabet-banner.dim_1200x400.png)"
+      "Vibrant hero banner for an educational tutoring website with neon accents (cyan, yellow-green, hot pink), books, stars, and pencils on a clean white background (hero-banner.dim_1440x600.png)",
+      "Modern minimalistic logo mark for 'Akshar Learning Hub' — a stylized letter A with a book or pencil motif in neon cyan and orange on white (akshar-logo.dim_400x400.png)",
+      "Colorful illustration of happy diverse children studying together at desks with books and a chalkboard, bright neon-accented style (about-illustration.dim_800x500.png)",
+      "Bright neon-accented icon set illustration showing five services: tuitions, phonics, maths, mentoring, exam prep as individual square tiles on white (services-icons.dim_1200x300.png)",
+      "Placeholder QR code graphic styled with neon cyan border and 'Scan to Pay' label (payment-qr-placeholder.dim_300x300.png)"
     ],
     "edits": []
   }

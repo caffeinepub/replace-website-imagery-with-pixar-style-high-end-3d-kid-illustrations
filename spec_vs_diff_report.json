@@ -1,53 +1,69 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T14:27:41.240Z",
-  "summary": "The diff implements all 10 requirements comprehensively. All major sections (Hero, About, ProgramOverview, PhonicsActivitiesDemo, LearningStrategies, Testimonials, Contact, Header, Footer) are created or rebuilt with blue-green gradient theme, phonics-based activities, animated elements, and correct branding. One image asset reference (mascot-phonics.dim_400x400.png) appears missing from the generatedImages.ts mapping, but otherwise all requirements are well-covered. A WordBuilding drag-and-drop activity is implemented beyond what was requested.",
+  "generatedAt": "2026-03-01T19:12:37.562Z",
+  "summary": "The diff implements the vast majority of the build requirements. All major sections (Hero, About, Services, Testimonials, Downloads, Contact, Footer, Header, WhatsApp button, Payment page, OTP modal) are present, along with the Motoko backend. However, the backend uses a mutable List without stable storage declaration, which may not satisfy the stable var persistence requirement. Several extra components were added that were not requested.",
   "missing_requirements": [
     {
-      "requirement": "Pixar HD-style illustration of a cute animated owl or animal mascot holding a letter card (mascot-phonics.dim_400x400.png) should be referenced and used as a decorative element in the activities section per REQ-5 AC requiring Pixar-style character illustrations as decorative elements",
-      "reason": "The generatedImages.ts file does not include a mapping for mascot-phonics.dim_400x400.png, and the PhonicsActivitiesDemo and activity components do not reference this mascot image as a decorative Pixar-style character illustration.",
+      "id": "REQ-13",
+      "requirement": "User data (name, email, phone) persists in stable storage — store records in a stable var array or HashMap",
+      "reason": "The Motoko backend uses `let users = List.empty<User>()` which is NOT declared as `stable var`. This means user data will not survive canister upgrades, violating the stable storage requirement.",
       "evidence": [
-        "frontend/src/assets/generatedImages.ts",
-        "frontend/src/components/PhonicsActivitiesDemo.tsx"
+        "backend/main.mo"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "WordBuilding drag-and-drop activity component where children select letters to spell words with validation, emoji hints, success animations, and audio feedback",
-      "reason": "REQ-5 only requested an alphabet pronunciation demo, a letter-sound matching quiz, and a word pronunciation exercise. A word-building or letter-spelling construction activity was not part of the specification.",
+      "description": "Extra components AksharPhonics.tsx, AksharTuitions.tsx, LearningStrategies.tsx, PhonicsActivitiesDemo.tsx, ProgramOverview.tsx were added",
+      "reason": "These component files are listed as modified or added but were not requested in the build spec. The spec only calls for specific sections: Hero, About, Services, Testimonials, Downloads, Contact, Footer, Header, Payment, OTP Modal, and WhatsApp button.",
       "evidence": [
-        "frontend/src/components/activities/WordBuilding.tsx"
+        "frontend/src/components/AksharPhonics.tsx",
+        "frontend/src/components/AksharTuitions.tsx",
+        "frontend/src/components/LearningStrategies.tsx",
+        "frontend/src/components/PhonicsActivitiesDemo.tsx",
+        "frontend/src/components/ProgramOverview.tsx"
+      ]
+    },
+    {
+      "description": "OTP expiry time-based validation with a 5-minute window was implemented in the backend",
+      "reason": "The build request only asked for OTP generation, storage, and correct/incorrect verification. A time-based expiry was not specified in any requirement or acceptance criterion.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Backend marks OTP as verified and clears the OTP field by adding a new user record on successful verification",
+      "reason": "The spec only requires verifyOTP to return true or false. The extra behavior of clearing the OTP and adding a duplicate verified record was not requested.",
+      "evidence": [
+        "backend/main.mo"
       ]
     }
   ],
-  "confidence": 0.87,
+  "confidence": 0.82,
   "changed_files": [
+    "backend/main.mo",
     "frontend-file-summaries.txt",
     "frontend/index.html",
     "frontend/src/App.tsx",
-    "frontend/src/assets/generatedImages.ts",
     "frontend/src/components/About.tsx",
+    "frontend/src/components/AksharPhonics.tsx",
+    "frontend/src/components/AksharTuitions.tsx",
     "frontend/src/components/Contact.tsx",
-    "frontend/src/components/Features.tsx",
+    "frontend/src/components/Downloads.tsx",
     "frontend/src/components/Footer.tsx",
-    "frontend/src/components/Gallery.tsx",
     "frontend/src/components/Header.tsx",
     "frontend/src/components/Hero.tsx",
-    "frontend/src/components/Illustration.tsx",
     "frontend/src/components/LearningStrategies.tsx",
+    "frontend/src/components/OTPModal.tsx",
+    "frontend/src/components/Payment.tsx",
     "frontend/src/components/PhonicsActivitiesDemo.tsx",
     "frontend/src/components/ProgramOverview.tsx",
+    "frontend/src/components/Services.tsx",
     "frontend/src/components/Testimonials.tsx",
-    "frontend/src/components/activities/ActivityLayout.tsx",
-    "frontend/src/components/activities/LetterSoundMatching.tsx",
-    "frontend/src/components/activities/PronunciationPractice.tsx",
-    "frontend/src/components/activities/SoundRecognition.tsx",
-    "frontend/src/components/activities/WordBuilding.tsx",
-    "frontend/src/components/activities/WordCard.tsx",
+    "frontend/src/components/WhatsAppButton.tsx",
+    "frontend/src/hooks/useQueries.ts",
     "frontend/src/index.css",
-    "frontend/src/utils/audioHelper.ts",
     "frontend/tailwind.config.js",
     "project_state.json"
   ]
